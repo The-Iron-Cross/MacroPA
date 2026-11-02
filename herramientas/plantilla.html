@@ -1,0 +1,402 @@
+<title>Panamá en Cifras</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: app de bolsillo — barra fija con pestañas por sector, cifras clave arriba, gráficas tocables debajo */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#14212b; --muted:#5b6b78; --rule:#dde3e8;
+  --blue:#0b4f8a; --blue-soft:#d9e6f2; --red:#c2283c; --teal:#1f7a74; --amber:#b7791f;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e161d; --surface:#152029; --ink:#e6edf2; --muted:#93a3b0; --rule:#26343f;
+  --blue:#6aa8e0; --blue-soft:#1d3347; --red:#f0677a; --teal:#4fbfb5; --amber:#e3a94e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e161d; --surface:#152029; --ink:#e6edf2; --muted:#93a3b0; --rule:#26343f;
+  --blue:#6aa8e0; --blue-soft:#1d3347; --red:#f0677a; --teal:#4fbfb5; --amber:#e3a94e; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--rule)}
+.brand{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-block:12px 4px}
+.brand h1{font-family:var(--display);font-weight:700;font-size:1.65rem;letter-spacing:.01em;margin:0;line-height:1.1}
+.brand h1 span{color:var(--blue)}
+.brand small{font-family:var(--mono);font-size:.7rem;color:var(--muted);white-space:nowrap}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:6px 8px}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid transparent}
+nav a[aria-current="page"]{background:var(--blue);color:var(--surface)}
+nav a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+main{padding-block:16px 40px}
+section{display:flex;flex-direction:column;gap:14px}
+.lede{color:var(--muted);margin:0;font-size:.92rem;max-width:62ch}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:620px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.kpi{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.kpi .l{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
+.kpi .v{font-family:var(--display);font-weight:600;font-size:2rem;line-height:1.05;font-variant-numeric:tabular-nums}
+.kpi .s{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.neg{color:var(--red)} .pos{color:var(--teal)}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 14px 10px;min-width:0}
+.card h2{font-family:var(--display);font-weight:600;font-size:1.25rem;margin:0;line-height:1.15;text-wrap:balance}
+.card .unit{font-size:.78rem;color:var(--muted);margin:2px 0 6px}
+.readout{font-family:var(--mono);font-size:.78rem;min-height:1.3em;display:flex;flex-wrap:wrap;gap:4px 12px;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.readout b{font-weight:500}
+.dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:1px}
+.chart{width:100%;touch-action:pan-y}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--mono);font-size:10.5px;fill:var(--muted)}
+.chart .lbl{font-family:var(--body);font-size:12px;fill:var(--ink)}
+.src{font-size:.72rem;color:var(--muted);margin:6px 0 0}
+.seg{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0 6px}
+.seg button{font:inherit;font-size:.78rem;padding:4px 10px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}
+footer{font-size:.78rem;color:var(--muted);border-top:1px solid var(--rule);padding-block:16px 32px;display:flex;flex-direction:column;gap:6px}
+footer a{color:var(--blue)}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><h1>Panamá <span>en Cifras</span></h1><small id="stamp"></small></div>
+    <nav id="tabs" aria-label="Secciones"></nav>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+<div class="wrap"><footer>
+  <div>Datos del Mapa de Información Económica de la República de Panamá (MINERPA), del Banco Interamericano de Desarrollo, elaborados con cifras del INEC, la Contraloría, el MEF y la Superintendencia de Bancos. La pestaña de Presupuesto usa Gestión Transparente Panamá, del MEF.</div>
+  <a href="https://gestiontransparentepanama.mef.gob.pa" target="_blank" rel="noopener">gestiontransparentepanama.mef.gob.pa</a>
+  <div>Toca o desliza el dedo sobre cualquier gráfica para ver el valor de cada año.</div>
+  <a href="https://minerpa.com.pa" target="_blank" rel="noopener">minerpa.com.pa</a>
+</footer></div>
+
+<script>
+const D = /*DATA*/null;
+const M = /*MEF*/null;
+const UPDATED = "/*UPDATED*/";
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (v,d=1) => v==null||isNaN(v) ? "—" : v.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+const last = a => a[a.length-1];
+const col = (rows,i) => rows.map(r=>r[i]);
+const fromYear = (rows,y) => rows.filter(r=>+r[0]>=y);
+const wideRows = (w,keys) => w.years.map((y,i)=>[y,...keys.map(k=>w[k][i])]);
+
+const SHORT = {
+ "Comercio al por mayor y al por menor (incluye zonas francas), reparación de vehículos de motor y motocicletas":"Comercio (incl. zonas francas)",
+ "Construcción":"Construcción","Transporte, almacenamiento y correo":"Transporte y logística (incl. Canal)",
+ "Otra producción no de mercado (Gobierno General e Instituciones sin fines de lucro)":"Gobierno y sin fines de lucro",
+ "Actividades inmobiliarias - para uso final propio":"Vivienda propia (alquiler imputado)",
+ "Actividades financieras y de seguros":"Banca y seguros","Industrias manufactureras":"Industria manufacturera",
+ "Actividades profesionales, científicas y técnicas":"Servicios profesionales","Impuestos sobre la producción netos":"Impuestos netos",
+ "Agricultura, ganadería, caza, silvicultura, pesca y actividades de servicios conexas":"Agropecuario y pesca",
+ "Actividades administrativas y servicios de apoyo":"Servicios administrativos","Información y comunicación":"Información y telecom.",
+ "Suministro de electricidad, gas, vapor y aire acondicionado":"Electricidad y gas","Actividades inmobiliarias":"Inmobiliarias",
+ "Hoteles y restaurantes":"Hoteles y restaurantes","Explotación de minas y canteras":"Minas y canteras","Enseñanza":"Enseñanza privada"
+};
+const SAL = {
+ "Agricultura":"Agropecuario","Explotación de minas":"Minas","Industrias manufactureras":"Manufactura","Suministro de electricidad":"Electricidad y gas",
+ "Suministro de agua":"Agua y saneamiento","Construcción":"Construcción","Comercio":"Comercio","Transporte":"Transporte",
+ "Hoteles":"Hoteles y restaurantes","Información":"Información y telecom.","Actividades financieras":"Banca y seguros",
+ "Actividades inmobiliarias":"Inmobiliarias","Actividades profesionales":"Servicios profesionales","Actividades administrativas":"Servicios administrativos",
+ "Administración pública":"Administración pública","Enseñanza":"Enseñanza","Servicios sociales":"Salud","Artes":"Artes y entretenimiento",
+ "Otras actividades":"Otros servicios","Actividades de los hogares":"Trabajo doméstico","Actividades de organizaciones":null
+};
+const salName = n => { for (const k in SAL) if (n.startsWith(k)) return SAL[k]; return n; };
+
+const SMALL=new Set(["de","del","la","las","el","los","y","e","a","en","para","por","s.a."]);
+const nice=(s,title)=>{ s=s.replace(/\s+/g," ").trim().toLowerCase().replace(/^servicio de la deuda pública$/,"servicio de la deuda pública");
+  if(title) return s.split(" ").map((w,i)=>i>0&&SMALL.has(w)?w:(w==="s.a."?"S.A.":w.charAt(0).toUpperCase()+w.slice(1))).join(" ");
+  return s.charAt(0).toUpperCase()+s.slice(1); };
+const FIX=[[/\beducacion\b/gi,m=>m[0]+"ducación"],[/\bproteccion\b/gi,m=>m[0]+"rotección"],[/\benergia\b/gi,m=>m[0]+"nergía"],[/\bmineria\b/gi,m=>m[0]+"inería"],[/\btecnologico\b/gi,"tecnológico"],[/\bpublica\b/g,"pública"],[/\bPanama\b/g,"Panamá"]];
+const SHORTN={"Servicio de la deuda pública":"Deuda pública","Servicio de la Deuda Pública":"Deuda pública","Protección y seguridad social":"Protección social",
+ "Transporte y comunicaciones":"Transporte y telecom.","Orden público y seguridad":"Orden público","Vivienda y desarrollo":"Vivienda","Materiales y suministros":"Materiales y suministros","Administración pública general":"Administración pública","Industria, comercio y turismo":"Comercio y turismo",
+ "Vivienda y desarrollo comunitario":"Vivienda","Conservación de la bio":"Biodiversidad","Construcciones por contrato":"Obras por contrato",
+ "Ministerio de Seguridad Pública":"Min. de Seguridad","Ministerio de Obras Públicas":"Obras Públicas (MOP)","Ministerio de Economía y Finanzas":"Economía y Finanzas (MEF)",
+ "Empresa Metro de Panamá S.A.":"Metro de Panamá","Aeropuerto Internacional de Tocumen S.A.":"Aeropuerto de Tocumen","Ministerio de Educación":"Min. de Educación","Ministerio de Salud":"Min. de Salud"};
+const label=(s,title)=>{ let t=nice(s,title); FIX.forEach(([re,r])=>t=t.replace(re,r)); if(/^Instituto para la Formación/.test(t)) return "IFARHU"; for(const k in SHORTN) if(t.startsWith(k.replace(/ S\.A\.$/,""))) return SHORTN[k]; return t; };
+/* ---------- charts ---------- */
+function frame(el, h){
+  const W = Math.max(280, el.clientWidth||340);
+  return {W, H:h, m:{t:8,r:10,b:22,l:38}};
+}
+function niceTicks(min,max,n=4){
+  if(min===max){max+=1;min-=1}
+  const span=max-min, step0=span/n, mag=Math.pow(10,Math.floor(Math.log10(step0)));
+  const step=[1,2,2.5,5,10].map(s=>s*mag).find(s=>span/s<=n+0.5);
+  const lo=Math.floor(min/step)*step, hi=Math.ceil(max/step)*step, t=[];
+  for(let v=lo; v<=hi+step/1e6; v+=step) t.push(+v.toFixed(10));
+  return t;
+}
+function xLabelIdx(n,maxLabels){
+  if(n<=maxLabels) return [...Array(n).keys()];
+  const step=Math.ceil((n-1)/(maxLabels-1)); const out=[];
+  for(let i=n-1;i>=0;i-=step) out.unshift(i);
+  return out;
+}
+const tickFmt = (v,step) => Math.abs(v)>=1e6 ? fmt(v/1e6, v%1e6?1:0)+"M" : Math.abs(v)>=1e4 ? fmt(v/1e3,0)+"k" : fmt(v, step<1? (step<0.1?2:1):0);
+
+function chart(el, cfg){
+  // cfg: {x:[labels], series:[{name,vals,color}], type:'line'|'bar', unit, dec, h, proj}
+  const {W,H,m} = frame(el, cfg.h||190);
+  const n=cfg.x.length, all=cfg.series.flatMap(s=>s.vals).filter(v=>v!=null);
+  let mn=Math.min(...all), mx=Math.max(...all);
+  if(cfg.type==='bar'||cfg.zero){mn=Math.min(0,mn); mx=Math.max(0,mx);}
+  const ticks=niceTicks(mn,mx,4), y0=ticks[0], y1=last(ticks), step=ticks[1]-ticks[0];
+  const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const ys=v=>m.t+ih-(v-y0)/(y1-y0)*ih;
+  const band=iw/n, xs=i=> cfg.type==='bar' ? m.l+band*(i+.5) : m.l+(n===1?iw/2:i*iw/(n-1));
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${cfg.title||''}">`;
+  ticks.forEach(t=>{ const y=ys(t);
+    s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="${css(t===0?'--muted':'--rule')}" stroke-width="${t===0?1:.8}" ${t===0?'':'stroke-dasharray="2 3"'}/>`;
+    s+=`<text x="${m.l-6}" y="${y+3.5}" text-anchor="end">${tickFmt(t,step)}</text>`; });
+  xLabelIdx(n, Math.max(3,Math.floor(iw/62))).forEach(i=> s+=`<text x="${xs(i)}" y="${H-6}" text-anchor="middle">${cfg.x[i]}</text>`);
+  if(cfg.proj!=null){ const i=cfg.x.indexOf(String(cfg.proj)); if(i>=0){ const x=xs(i);
+    s+=`<rect x="${x}" y="${m.t}" width="${W-m.r-x}" height="${ih}" fill="${css('--blue-soft')}" opacity=".45"/>`;
+    s+=`<text x="${x+4}" y="${m.t+11}" text-anchor="start">proyección</text>`; } }
+  const k=cfg.series.length;
+  cfg.series.forEach((se,si)=>{
+    const c=css(se.color||'--blue');
+    if(cfg.type==='bar'){
+      const bw=Math.max(1,band*(k>1?.42:.7)), off=k>1?(si-(k-1)/2)*bw:0;
+      se.vals.forEach((v,i)=>{ if(v==null) return;
+        const y=ys(Math.max(v,0)), h=Math.abs(ys(v)-ys(0));
+        const fill = se.signColor ? css(v<0?'--red':'--teal') : c;
+        s+=`<rect x="${xs(i)-bw/2+off}" y="${y}" width="${bw}" height="${Math.max(h,.5)}" fill="${fill}" rx="${bw>6?1.5:0}"/>`; });
+    } else {
+      let d="", pen=false;
+      se.vals.forEach((v,i)=>{ if(v==null){pen=false;return;} d+=(pen?"L":"M")+xs(i).toFixed(1)+","+ys(v).toFixed(1); pen=true; });
+      if(k===1 && !cfg.noArea){ const idx=se.vals.map((v,i)=>v==null?null:i).filter(i=>i!=null);
+        if(idx.length>1) s+=`<path d="${d}L${xs(last(idx))},${ys(y0)}L${xs(idx[0])},${ys(y0)}Z" fill="${c}" opacity=".10"/>`; }
+      s+=`<path d="${d}" fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" ${se.dash?'stroke-dasharray="4 3"':''}/>`;
+      const li=se.vals.map((v,i)=>v==null?-1:i).filter(i=>i>=0).pop();
+      if(li!=null) s+=`<circle cx="${xs(li)}" cy="${ys(se.vals[li])}" r="3.5" fill="${c}" stroke="${css('--surface')}" stroke-width="1.5"/>`;
+    }
+  });
+  s+=`<line class="cursor" x1="0" x2="0" y1="${m.t}" y2="${m.t+ih}" stroke="${css('--ink')}" stroke-width="1" opacity="0"/></svg>`;
+  el.innerHTML=s;
+  const svg=el.querySelector("svg"), cur=svg.querySelector(".cursor"), ro=el.parentElement.querySelector(".readout");
+  const show=i=>{
+    ro.innerHTML=`<b>${cfg.x[i]}</b>`+cfg.series.map(se=>`<span><i class="dot" style="background:${se.signColor?css(se.vals[i]<0?'--red':'--teal'):css(se.color||'--blue')}"></i>${se.name?se.name+' ':''}${fmt(se.vals[i],cfg.dec??1)}${se.vals[i]==null?'':(cfg.unit||'')}</span>`).join("");
+  };
+  const lastIdx=Math.max(...cfg.series.map(se=>{for(let i=n-1;i>=0;i--) if(se.vals[i]!=null) return i; return 0;}));
+  show(lastIdx);
+  const pick=e=>{ const r=svg.getBoundingClientRect(), px=(e.clientX-r.left)*W/r.width;
+    let i= cfg.type==='bar' ? Math.floor((px-m.l)/band) : Math.round((px-m.l)/(iw/(n-1||1)));
+    i=Math.max(0,Math.min(n-1,i)); cur.setAttribute("x1",xs(i)); cur.setAttribute("x2",xs(i)); cur.setAttribute("opacity",".35"); show(i); };
+  svg.addEventListener("pointermove",pick); svg.addEventListener("pointerdown",pick);
+  svg.addEventListener("pointerleave",()=>{cur.setAttribute("opacity","0"); show(lastIdx);});
+}
+
+function hbars(el, cfg){
+  // cfg: {rows:[[label,val]], unit, dec, highlight, signColor}
+  const W=Math.max(280, el.clientWidth||340), rowH=24, lw=Math.min(190, W*.5), vw=50;
+  const maxc=Math.floor(lw/6.3), H=cfg.rows.length*rowH+4, vals=cfg.rows.map(r=>r[1]);
+  const mn=Math.min(0,...vals), mx=Math.max(0,...vals), iw=W-lw-vw-8;
+  const xs=v=>lw+8+(v-mn)/(mx-mn||1)*iw;
+  let s=`<svg viewBox="0 0 ${W} ${H}">`;
+  cfg.rows.forEach(([lab,v],i)=>{
+    const y=i*rowH+2, hl=cfg.highlight&&cfg.highlight(lab);
+    const fill = cfg.signColor ? css(v<0?'--red':'--teal') : css(hl?'--amber':'--blue');
+    const x0=xs(Math.min(0,v)), w=Math.abs(xs(v)-xs(0));
+    s+=`<text class="lbl" x="${lw}" y="${y+15}" text-anchor="end" ${hl?'font-weight="600"':''}>${lab.length>maxc?lab.slice(0,maxc-1)+'…':lab}</text>`;
+    s+=`<rect x="${x0}" y="${y+4}" width="${Math.max(w,1)}" height="${rowH-9}" fill="${fill}" rx="2"/>`;
+    s+=`<text x="${(v<0?x0:xs(v))+(v<0?-4:4)}" y="${y+15}" text-anchor="${v<0?'end':'start'}" style="fill:var(--ink)">${fmt(v,cfg.dec??1)}${cfg.unit||''}</text>`;
+  });
+  if(mn<0) s+=`<line x1="${xs(0)}" x2="${xs(0)}" y1="0" y2="${H}" stroke="${css('--muted')}" stroke-width="1"/>`;
+  el.innerHTML=s+"</svg>";
+}
+
+/* ---------- content ---------- */
+const lastWith=(rows,i)=>{for(let k=rows.length-1;k>=0;k--) if(rows[k][i]!=null) return rows[k]; };
+const sign=v=>v>0?"+":"";
+function kpi(l,v,s,cls=""){return `<div class="kpi"><span class="l">${l}</span><span class="v ${cls}">${v}</span><span class="s">${s}</span></div>`}
+function card(id,title,unit,src,extra=""){return `<div class="card"><h2>${title}</h2><div class="unit">${unit}</div>${extra}<div class="readout"></div><div class="chart" id="${id}"></div><p class="src">${src}</p></div>`}
+function hcard(id,title,unit,src,extra=""){return `<div class="card"><h2>${title}</h2><div class="unit">${unit}</div>${extra}<div class="chart" id="${id}"></div><p class="src">${src}</p></div>`}
+const segs=(name,opts)=>`<div class="seg" data-seg="${name}">${opts.map((o,i)=>`<button type="button" data-v="${o[0]}" aria-pressed="${i===0}">${o[1]}</button>`).join("")}</div>`;
+const state={pib:"1990",prov:"gen",pyear:"2026",pmet:"monto",pmet2:"monto"};
+
+const SECTIONS = {
+ economia:{label:"Economía", render(){
+   const g=last(D.pib_growth), pc=last(D.pib_pc), inf=last(D.inflacion), im=last(D.imae), pn=last(D.pib_nom);
+   return `<p class="lede">Producción, crecimiento y precios. El año ${g[0]} es el último cierre anual; el IMAE adelanta el pulso de 20${im[0].slice(-2)}.</p>
+   <div class="kpis">
+    ${kpi("Crecimiento PIB "+g[0], sign(g[1])+fmt(g[1])+"%", "real, a precios constantes", g[1]<0?"neg":"")}
+    ${kpi("Tamaño de la economía", "B/."+fmt(pn[1]/1000,1)+" mil M", "PIB nominal "+pn[0])}
+    ${kpi("PIB per cápita "+pc[0], "$"+fmt(pc[1],0), "nominal, en dólares")}
+    ${kpi("IMAE "+im[0], sign(im[1])+fmt(im[1])+"%", "variación interanual", im[1]<0?"neg":"")}
+   </div>
+   ${card("c-pib","Crecimiento del PIB real","Variación anual, %","Fuente: INEC (Contraloría) vía MINERPA.",segs("pib",[["1990","Desde 1990"],["1951","Desde 1951"]]))}
+   ${card("c-imae","Pulso mensual de la economía (IMAE)","Variación interanual del Índice Mensual de Actividad Económica, %","Fuente: INEC vía MINERPA. Base 2007.")}
+   ${hcard("c-sec","¿Cuánto creció cada sector en "+D.sectores.year+"?","Variación real frente al año anterior, %. Ordenado por tamaño del sector.","Fuente: INEC vía MINERPA. PIB por enfoque de oferta, base 2018.")}
+   ${card("c-pc","PIB per cápita","Dólares por habitante","Fuente: INEC vía MINERPA.")}
+   ${card("c-inf","Inflación","Índice de Precios al Consumidor, %","Fuente: INEC vía MINERPA.")}`;
+ }, draw(){
+   const r=fromYear(D.pib_growth,+state.pib);
+   chart(q("#c-pib"),{type:"bar",x:col(r,0).map(String),series:[{name:"",vals:col(r,1),signColor:true}],unit:"%"});
+   chart(q("#c-imae"),{type:"line",x:col(D.imae,0),series:[{vals:col(D.imae,1)}],unit:"%",zero:true});
+   const sec=D.sectores.rows.filter(r=>SHORT[r[0]]).sort((a,b)=>b[1]-a[1]).map(r=>[SHORT[r[0]],r[2]]);
+   hbars(q("#c-sec"),{rows:sec,unit:"%",signColor:true});
+   const pc=fromYear(D.pib_pc,1980);
+   chart(q("#c-pc"),{type:"line",x:col(pc,0).map(String),series:[{name:"Nominal",vals:col(pc,1),color:"--blue"},{name:"Real",vals:col(pc,2),color:"--amber",dash:true}],dec:0});
+   const inf=fromYear(D.inflacion,1990);
+   chart(q("#c-inf"),{type:"bar",x:col(inf,0).map(String),series:[{name:"Promedio",vals:col(inf,1),color:"--amber"}],unit:"%"});
+ }},
+ fiscal:{label:"Fiscal", render(){
+   const sp=wideRows(D.spnf,["ing","gas","int","prim","tot"]), l=last(sp), de=last(D.deuda), acp=last(D.acp);
+   return `<p class="lede">Ingresos, gastos, déficit y deuda del Sector Público No Financiero (SPNF), que incluye al Gobierno Central, la CSS y las empresas públicas.</p>
+   <div class="kpis">
+    ${kpi("Déficit SPNF "+l[0], fmt(l[5])+"%", "del PIB", l[5]<0?"neg":"")}
+    ${kpi("Deuda pública "+de[0], fmt(de[2])+"%", "del PIB · $"+fmt(de[1]/1000,1)+" mil M")}
+    ${kpi("Intereses "+l[0], fmt(l[3])+"%", "del PIB")}
+    ${kpi("Aporte del Canal "+acp[0], "B/."+fmt(acp[1],0)+" M", fmt(acp[2])+"% del PIB")}
+   </div>
+   ${card("c-bal","Balance fiscal del SPNF","% del PIB. Primario = sin contar intereses.","Fuente: MEF vía MINERPA.")}
+   ${card("c-ig","Ingresos y gastos del SPNF","% del PIB","Fuente: MEF vía MINERPA.")}
+   ${card("c-deuda","Deuda pública bruta","% del PIB","Fuente: MEF vía MINERPA.")}
+   ${card("c-dcomp","Deuda interna y externa","Millones de dólares","Fuente: MEF vía MINERPA.")}
+   ${card("c-trib","Recaudación de impuestos","% del PIB","Fuente: MEF/DGI vía MINERPA. Último dato publicado: "+last(D.impuestos.years)+".")}
+   ${card("c-acp","Aportes del Canal al Tesoro","Millones de balboas","Fuente: Autoridad del Canal de Panamá vía MINERPA.")}`;
+ }, draw(){
+   const sp=wideRows(D.spnf,["prim","tot","ing","gas"]);
+   chart(q("#c-bal"),{type:"bar",x:col(sp,0),series:[{name:"Primario",vals:col(sp,1),color:"--teal"},{name:"Total",vals:col(sp,2),color:"--red"}],unit:"%"});
+   chart(q("#c-ig"),{type:"line",x:col(sp,0),series:[{name:"Ingresos",vals:col(sp,3),color:"--blue"},{name:"Gastos",vals:col(sp,4),color:"--red"}],unit:"%"});
+   chart(q("#c-deuda"),{type:"line",x:col(D.deuda,0).map(String),series:[{vals:col(D.deuda,2)}],unit:"%"});
+   const dc=fromYear(D.deuda_comp,2000);
+   chart(q("#c-dcomp"),{type:"line",x:col(dc,0).map(String),series:[{name:"Externa",vals:col(dc,2),color:"--blue"},{name:"Interna",vals:col(dc,1),color:"--amber"}],dec:0,zero:true});
+   const im=wideRows(D.impuestos,["tot","renta","consumo","selectivos"]);
+   chart(q("#c-trib"),{type:"line",x:col(im,0),series:[{name:"Total",vals:col(im,1),color:"--blue"},{name:"Renta",vals:col(im,2),color:"--teal"},{name:"ITBMS",vals:col(im,3),color:"--amber"}],unit:"%",zero:true});
+   chart(q("#c-acp"),{type:"bar",x:col(D.acp,0).map(String),series:[{vals:col(D.acp,1),color:"--blue"}],dec:0});
+ }},
+ presupuesto:{label:"Presupuesto", render(){
+   const Y=M.years, ly=last(Y), t=M.tot[ly], tp=M.tot[ly-1], pe=t[2]/t[1]*100, pep=tp[2]/tp[1]*100;
+   const deuda=M.sect[ly].find(r=>r[0].startsWith("SERVICIO DE LA DEUDA"));
+   return `<p class="lede">Presupuesto General del Estado: lo aprobado por la Asamblea, lo modificado durante el año y lo ejecutado. La ejecución de ${ly} es parcial, con datos a la fecha de consulta.</p>
+   <div class="kpis">
+    ${kpi("Presupuesto "+ly, "B/."+fmt(t[1]/1000,1)+" mil M", "modificado")}
+    ${kpi("Ejecutado "+ly, fmt(pe,0)+"%", "B/."+fmt(t[2]/1000,1)+" mil M a la fecha")}
+    ${kpi("Ejecución "+(ly-1), fmt(pep,0)+"%", "del presupuesto modificado")}
+    ${kpi("Deuda "+ly, fmt(deuda[2]/t[1]*100,0)+"%", "del presupuesto va a pagar deuda")}
+   </div>
+   ${card("c-ptot","Presupuesto por año","Millones de balboas","Fuente: MEF, Gestión Transparente Panamá. "+ly+": ejecución parcial.")}
+   ${hcard("c-psec","¿En qué sectores se gasta?","Presupuesto modificado en millones de balboas, o porcentaje ya ejecutado","Fuente: MEF, Gestión Transparente Panamá.",segs("pyear",Y.slice().reverse().map(y=>[String(y),String(y)]))+segs("pmet",[["monto","Monto"],["ejec","% ejecutado"]]))}
+   ${hcard("c-pgr","¿En qué tipo de gasto?","Grupo de gasto, mismo año seleccionado arriba","Fuente: MEF, Gestión Transparente Panamá.",segs("pmet2",[["monto","Monto"],["ejec","% ejecutado"]]))}
+   ${hcard("c-pinst","Instituciones con mayor presupuesto, "+ly,"Presupuesto modificado, millones de balboas. "+M.n_inst+" instituciones en total.","Fuente: MEF, Gestión Transparente Panamá.")}`;
+ }, draw(){
+   const Y=M.years.map(String);
+   chart(q("#c-ptot"),{type:"bar",x:Y,series:[{name:"Aprob.",vals:M.years.map(y=>M.tot[y][0]),color:"--muted"},{name:"Modif.",vals:M.years.map(y=>M.tot[y][1]),color:"--blue"},{name:"Ejec.",vals:M.years.map(y=>M.tot[y][2]),color:"--teal"}],dec:0});
+   const y=state.pyear, pct=(e,m)=>m?Math.round(e/m*1000)/10:0;
+   const srows=M.sect[y].filter(r=>r[2]>=1).map(r=>[label(r[0]), state.pmet==="monto"?r[2]:pct(r[3],r[2])]).sort((a,b)=>b[1]-a[1]);
+   hbars(q("#c-psec"),{rows:srows,dec:state.pmet==="monto"?0:1,unit:state.pmet==="monto"?"":"%"});
+   const grows=Object.entries(M.grupos).map(([k,v])=>[label(k), state.pmet2==="monto"?v[y][0]:pct(v[y][1],v[y][0])]).filter(r=>r[1]>0.5).sort((a,b)=>b[1]-a[1]);
+   hbars(q("#c-pgr"),{rows:grows,dec:state.pmet2==="monto"?0:1,unit:state.pmet2==="monto"?"":"%"});
+   hbars(q("#c-pinst"),{rows:M.inst.slice(0,12).map(r=>[label(r[0],true),r[2]]),dec:0});
+   const g=q("#c-pgr").closest(".card").querySelector(".unit"); g.textContent="Grupo de gasto en "+y+(state.pmet2==="monto"?", millones de balboas":", porcentaje ya ejecutado");
+ }},
+ externo:{label:"Externo", render(){
+   const cc=wideRows(D.cc,["cc"]), c=last(cc), co=wideRows(D.com,["x","m","bienes","serv"]), l=last(co), ied=wideRows(D.ied,["rec"]), ip=wideRows(D.ied_pct,["rec"]);
+   return `<p class="lede">Lo que Panamá vende y compra al mundo, y la inversión que llega del exterior.</p>
+   <div class="kpis">
+    ${kpi("Cuenta corriente "+c[0], fmt(c[1])+"%", "del PIB", c[1]<0?"neg":"")}
+    ${kpi("Exportaciones "+l[0], fmt(l[1])+"%", "bienes y servicios, del PIB")}
+    ${kpi("Superávit servicios "+l[0], "+"+fmt(l[4])+"%", "del PIB", "pos")}
+    ${kpi("Inversión extranjera "+last(ied)[0], "$"+fmt(last(ied)[1],0)+" M", fmt(last(ip)[1])+"% del PIB")}
+   </div>
+   ${card("c-cc","Cuenta corriente","% del PIB","Fuente: INEC vía MINERPA. Balanza de pagos.")}
+   ${card("c-xm","Exportaciones e importaciones","Bienes y servicios, % del PIB","Fuente: INEC vía MINERPA.")}
+   ${card("c-bs","Saldo de bienes frente a saldo de servicios","% del PIB. Panamá compra bienes y vende servicios (Canal, puertos, turismo, banca).","Fuente: INEC vía MINERPA.")}
+   ${card("c-ied","Inversión extranjera directa recibida","Millones de dólares","Fuente: INEC vía MINERPA.")}`;
+ }, draw(){
+   const cc=fromYear(wideRows(D.cc,["cc"]),1990);
+   chart(q("#c-cc"),{type:"bar",x:col(cc,0),series:[{vals:col(cc,1),signColor:true}],unit:"%"});
+   const co=fromYear(wideRows(D.com,["x","m","bienes","serv"]),1990);
+   chart(q("#c-xm"),{type:"line",x:col(co,0),series:[{name:"Export.",vals:col(co,1),color:"--teal"},{name:"Import.",vals:col(co,2),color:"--red"}],unit:"%"});
+   chart(q("#c-bs"),{type:"line",x:col(co,0),series:[{name:"Bienes",vals:col(co,3),color:"--red"},{name:"Servicios",vals:col(co,4),color:"--teal"}],unit:"%",zero:true});
+   const ied=fromYear(wideRows(D.ied,["rec"]),1990);
+   chart(q("#c-ied"),{type:"bar",x:col(ied,0),series:[{vals:col(ied,1),color:"--blue"}],dec:0});
+ }},
+ empleo:{label:"Empleo", render(){
+   const de=last(D.desempleo), inf=last(D.informalidad), pa=last(D.participacion), st=D.salario;
+   return `<p class="lede">Cuántos trabajan, cuántos buscan empleo y cuánto ganan. Encuesta de Mercado Laboral del INEC.</p>
+   <div class="kpis">
+    ${kpi("Desempleo "+de[0], fmt(de[1])+"%", "de la población activa", "neg")}
+    ${kpi("Informalidad "+inf[0], fmt(inf[1])+"%", "del empleo no agrícola")}
+    ${kpi("Participación "+pa[0], fmt(pa[1])+"%", "personas de 15+ años")}
+    ${kpi("Salario mediano "+st.year, "B/."+fmt(last(st.total),0), "mensual")}
+   </div>
+   ${card("c-des","Tasa de desempleo","% de la población económicamente activa","Fuente: INEC vía MINERPA. Calculada como 100 menos la tasa de ocupación.")}
+   ${card("c-inf2","Tasa de informalidad","% del empleo no agrícola","Fuente: INEC vía MINERPA.")}
+   ${card("c-sal","Salario mediano mensual","Balboas, todos los sectores","Fuente: INEC vía MINERPA. Sin dato en 2020.")}
+   ${hcard("c-salact","Salario mediano por actividad, "+st.year,"Balboas al mes","Fuente: INEC vía MINERPA.")}`;
+ }, draw(){
+   const de=fromYear(D.desempleo,1980), inf=D.informalidad;
+   chart(q("#c-des"),{type:"line",x:col(de,0).map(String),series:[{vals:col(de,1),color:"--red"}],unit:"%",zero:true});
+   chart(q("#c-inf2"),{type:"line",x:col(inf,0).map(String),series:[{vals:col(inf,1),color:"--amber"}],unit:"%"});
+   chart(q("#c-sal"),{type:"line",x:D.salario.years,series:[{vals:D.salario.total,color:"--teal"}],dec:0,unit:""});
+   const rows=D.salario.act.map(r=>[salName(r[0]),r[1]]).filter(r=>r[0]).sort((a,b)=>b[1]-a[1]);
+   hbars(q("#c-salact"),{rows,dec:0});
+ }},
+ social:{label:"Social", render(){
+   const p=last(D.pobreza), gi=last(D.gini), ng=D.pob_prov.rows.find(r=>r[0].includes("Ngäbe"));
+   return `<p class="lede">Pobreza y desigualdad. La pobreza se mide por ingreso; la multidimensional mira salud, educación, vivienda, empleo y servicios.</p>
+   <div class="kpis">
+    ${kpi("Pobreza general "+p[0], fmt(p[1])+"%", "de la población")}
+    ${kpi("Pobreza extrema "+p[0], fmt(p[2])+"%", "de la población")}
+    ${kpi("Pobreza rural "+p[0], fmt(p[4])+"%", "frente a "+fmt(p[3])+"% urbana", "neg")}
+    ${kpi("Coeficiente de Gini "+gi[0], fmt(gi[1],2), "0 = igualdad total")}
+   </div>
+   ${card("c-pob","Pobreza general y extrema","% de la población","Fuente: MEF/INEC vía MINERPA.")}
+   ${hcard("c-prov","Pobreza por provincia y comarca","% de la población","Fuente: MEF vía MINERPA.",segs("prov",[["gen","General "+D.pob_prov.year],["ext","Extrema "+D.pobx_prov.year],["mul","Multidimensional "+D.pobm_prov.year]]))}
+   ${card("c-gini","Desigualdad de ingresos","Coeficiente de Gini","Fuente: MEF/INEC vía MINERPA.")}
+   ${hcard("c-ing","Ingreso mensual de los hogares, "+D.ing_prov.year,"Promedio, en balboas","Fuente: INEC vía MINERPA.")}`;
+ }, draw(){
+   const p=D.pobreza;
+   chart(q("#c-pob"),{type:"line",x:col(p,0).map(String),series:[{name:"General",vals:col(p,1),color:"--blue"},{name:"Extrema",vals:col(p,2),color:"--red"}],unit:"%",zero:true});
+   const src={gen:D.pob_prov,ext:D.pobx_prov,mul:D.pobm_prov}[state.prov];
+   hbars(q("#c-prov"),{rows:[...src.rows].sort((a,b)=>b[1]-a[1]),unit:"%",highlight:l=>l==="Total"});
+   chart(q("#c-gini"),{type:"line",x:col(D.gini,0).map(String),series:[{vals:col(D.gini,1),color:"--amber"}],dec:2});
+   hbars(q("#c-ing"),{rows:[...D.ing_prov.rows].sort((a,b)=>b[1]-a[1]),dec:0,highlight:l=>l==="Total"});
+ }},
+ poblacion:{label:"Población", render(){
+   const p23=D.poblacion.find(r=>r[0]===2025), p50=last(D.poblacion), dm=last(D.demo), ed=D.edad.find(r=>r[0]===2025)||last(D.edad);
+   return `<p class="lede">Cuántos somos y cómo cambiamos. Estimaciones y proyecciones del INEC elaboradas a partir del Censo 2023.</p>
+   <div class="kpis">
+    ${kpi("Población 2025", fmt(p23[1]/1e6,2)+" M", "estimación del INEC")}
+    ${kpi("Proyección "+p50[0], fmt(p50[1]/1e6,2)+" M", "habitantes")}
+    ${kpi("Natalidad "+dm[0], fmt(dm[1]), "nacimientos por 1,000 hab.")}
+    ${kpi("Edad promedio "+ed[0], fmt(ed[1]), "años")}
+   </div>
+   ${card("c-pobl","Población total","Millones de habitantes, 1950–2050","Fuente: INEC, estimaciones y proyecciones con base en el Censo 2023, vía MINERPA.")}
+   ${card("c-nat","Natalidad","Nacimientos por cada 1,000 habitantes","Fuente: INEC vía MINERPA.")}
+   ${card("c-mi","Mortalidad infantil","Muertes de menores de un año por cada 1,000 nacidos vivos","Fuente: INEC vía MINERPA.")}`;
+ }, draw(){
+   chart(q("#c-pobl"),{type:"line",x:col(D.poblacion,0).map(String),series:[{vals:D.poblacion.map(r=>r[1]/1e6)}],dec:2,unit:" M",proj:2026,zero:true});
+   chart(q("#c-nat"),{type:"line",x:col(D.demo,0).map(String),series:[{vals:col(D.demo,1),color:"--teal"}],zero:true});
+   chart(q("#c-mi"),{type:"line",x:col(D.demo,0).map(String),series:[{vals:col(D.demo,2),color:"--red"}],zero:true});
+ }}
+};
+
+const q=s=>document.querySelector(s);
+let current="economia";
+function go(id){
+  if(!SECTIONS[id]) id="economia"; current=id;
+  q("#tabs").innerHTML=Object.entries(SECTIONS).map(([k,v])=>`<a href="#${k}" ${k===id?'aria-current="page"':''}>${v.label}</a>`).join("");
+  q("#main").innerHTML=`<section>${SECTIONS[id].render()}</section>`;
+  q("#main").querySelectorAll(".seg").forEach(g=>g.addEventListener("click",e=>{
+    const b=e.target.closest("button"); if(!b) return;
+    g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    state[g.dataset.seg]=b.dataset.v; SECTIONS[current].draw();
+  }));
+  q("#main").querySelectorAll(".seg").forEach(g=>g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.v===state[g.dataset.seg])));
+  SECTIONS[id].draw();
+  const t=q('#tabs a[aria-current]'); if(t){ const n=q("#tabs"); n.scrollLeft=t.offsetLeft-(n.clientWidth-t.offsetWidth)/2; }
+}
+q("#stamp").textContent="Datos al "+UPDATED;
+window.addEventListener("hashchange",()=>{go(location.hash.slice(1)); window.scrollTo(0,0);});
+let rt; window.addEventListener("resize",()=>{clearTimeout(rt); rt=setTimeout(()=>SECTIONS[current].draw(),150)});
+try{ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>SECTIONS[current].draw()); }catch(e){}
+new MutationObserver(()=>SECTIONS[current].draw()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+go(location.hash.slice(1));
+</script>
