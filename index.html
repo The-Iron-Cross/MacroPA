@@ -265,7 +265,7 @@ function kpi(l,v,s,cls=""){return `<div class="kpi"><span class="l">${l}</span><
 function card(id,title,unit,src,extra=""){return `<div class="card"><h2>${title}</h2><div class="unit">${unit}</div>${extra}<div class="readout"></div><div class="chart" id="${id}"></div><p class="src">${src}</p></div>`}
 function hcard(id,title,unit,src,extra=""){return `<div class="card"><h2>${title}</h2><div class="unit">${unit}</div>${extra}<div class="chart" id="${id}"></div><p class="src">${src}</p></div>`}
 const segs=(name,opts)=>`<div class="seg" data-seg="${name}">${opts.map((o,i)=>`<button type="button" data-v="${o[0]}" aria-pressed="${i===0}">${o[1]}</button>`).join("")}</div>`;
-const state={lu:"total",liy:"2026",lay:"2026",pib:"1990",prov:"gen",pyear:"2026",pmet:"monto",pmet2:"monto",tcr:"hogar",infy:"2025",dem:"monto",demy:"2024",mtr:"trans",mimp:"impc",mcomb:"comb",mcon:"cres",mcem:"concreto"};
+const state={lu:"total",liy:"2026",lay:"2026",lty:"2026",ltr:"2026",pib:"1990",prov:"gen",pyear:"2026",pmet:"monto",pmet2:"monto",tcr:"hogar",infy:"2025",dem:"monto",demy:"2024",mtr:"trans",mimp:"impc",mcomb:"comb",mcon:"cres",mcem:"concreto"};
 
 const SECTIONS = {
  economia:{label:"Economía", render(){
@@ -466,8 +466,8 @@ const SECTIONS = {
     ${card("c-ocu","Ocupados y desocupados","Miles de personas","")}
     <div class="card"><h2>Composición del empleo, 2017–2026</h2><div class="unit">% de la población ocupada. Tiempo parcial y subempleo visible van juntos porque el INEC los publicó sumados en 2021–2023.</div><div class="readout"></div><div class="chart" id="c-comp"></div>
      <p class="src">Fuente: INEC, Situación de la población ocupada, Cuadro 1 de cada edición (2017–2026). Población total. 2020 no tiene este desglose. Toca una barra para ver el detalle.</p></div>
-    <div class="card"><h2>Ocupados por actividad económica</h2><div class="unit">Personas ocupadas de 15 años y más</div><div id="t-act"></div><p class="src">Fuente: INEC, Encuesta de Mercado Laboral agosto 2026, Cuadro 11.</p></div>
-    <div class="card"><h2>Árbol del empleo</h2><div class="unit">Personas de 15 años y más, por condición de actividad y categoría en la ocupación</div><div class="tree" id="t-tree" style="margin-top:6px"></div>
+    <div class="card"><h2>Ocupados por actividad económica</h2><div class="unit">Personas ocupadas de 15 años y más y % del total de ocupados del año</div>${segs("lty",[["2026","Agosto 2026"],["2025","Septiembre 2025"]])}<div id="t-act"></div><p class="src">Fuente: INEC, Encuesta de Mercado Laboral agosto 2026, Cuadro 11 (trae septiembre 2025 y agosto 2026).</p></div>
+    <div class="card"><h2>Árbol del empleo</h2><div class="unit">Personas de 15 años y más, por condición de actividad y categoría en la ocupación. El % es sobre la fila de arriba en el árbol: las ramas de cada fila suman 100%.</div>${segs("ltr",[["2026","Agosto 2026"],["2025","Septiembre 2025"]])}<div class="tree" id="t-tree" style="margin-top:6px"></div>
      <p class="src">Fuente: INEC, EML agosto 2026, Cuadro 2 (población, PEA, desocupados) y Situación de la población ocupada agosto 2026, Cuadro 6 (categorías). Los ocupados suman exactamente sus ramas.</p></div>
     ${card("c-inf2","Tasa de informalidad","% de los ocupados no agrícolas con empleo informal, 2004–2026","Fuente: INEC, Situación de la población ocupada, agosto 2026, Cuadro 11. En 2020 (encuesta telefónica) solo se publicó la tasa.")}
     ${hcard("c-infp","Informalidad por sexo, provincia y comarca","% del empleo no agrícola","Fuente: INEC, EML agosto 2026, Cuadro 26 (y septiembre 2025).",segs("liy",[["2026","Agosto 2026"],["2025","Septiembre 2025"]]))}
@@ -495,15 +495,17 @@ const SECTIONS = {
     const C=L.comp;
     stack100(q("#c-comp"),{x:C.years.map(String),xl:C.lab,parts:[{name:"Empleo pleno",vals:C.pleno,color:"--blue"},{name:"Tiempo parcial + subempleo visible",vals:C.parcvis,color:"--green"},{name:"Subempleo invisible",vals:C.invisible,color:"--amber"}]});
     const f0=v=>fmt(v,0);
-    q("#t-act").innerHTML=`<table class="tbl"><thead><tr><th>Actividad</th><th>Sep 2025</th><th>Ago 2026</th><th>Var. %</th></tr></thead><tbody>`+
-      L.actt.map(([l,a,b,v])=>`<tr class="${l==="Total"?"tot":l.startsWith("Sector")?"sec":""}"><td>${l}</td><td>${f0(a)}</td><td>${f0(b)}</td><td class="${v<0?"neg":""}">${v>0?"+":""}${fmt(v)}</td></tr>`).join("")+`</tbody></table>`;
-    const T=L.tree, tt=L.total, yi=y=>tt.years.indexOf(y), V=k=>[tt[k][yi(2025)],tt[k][yi(2026)]];
+    const ai=state.lty==="2025"?1:2, atot=L.actt[0][ai];
+    q("#t-act").innerHTML=`<table class="tbl"><thead><tr><th>Actividad</th><th>Ocupados</th><th>% del total</th></tr></thead><tbody>`+
+      L.actt.map(r=>{const l=r[0],v=r[ai];return `<tr class="${l==="Total"?"tot":l.startsWith("Sector")?"sec":""}"><td>${l}</td><td>${f0(v)}</td><td>${fmt(100*v/atot)}</td></tr>`}).join("")+`</tbody></table>`;
+    const T=L.tree, tt=L.total, yi=y=>tt.years.indexOf(y), V=k=>[tt[k][yi(2025)],tt[k][yi(2026)]], ti=state.ltr==="2025"?0:1;
     const R=[["Población de 15 años y más",0,V("pet"),1],["Población económicamente activa (PEA)",1,V("pea"),1],["Ocupados",2,T.ocup,1],["Empleados",3,T.empleado,1],
       ["Gobierno",4,T.gob],["Empresa privada",4,T.priv],["Organizaciones sin fines de lucro",4,T.ong],["Cooperativas",4,T.coop],["Servicio doméstico",4,T.dom],
       ["Cuenta propia",3,T.cp],["Patronos",3,T.pat],["Trabajadores familiares",3,T.fam],["Miembros de cooperativas de producción",3,T.cprod],
       ["Desocupados",2,V("desocupados"),1],["No económicamente activa",1,V("pnea"),1]];
-    q("#t-tree").innerHTML=`<div class="h">Categoría</div><div class="h n">Sep 2025</div><div class="h n">Ago 2026</div>`+
-      R.map(([l,d,v,b])=>`<div class="lb ${b?"b":""}" ${d?`data-d="${d}"`:""} style="padding-left:${16+d*14}px;--i:${d*14}px">${l}</div><div class="n ${b?"b":""}">${f0(v[0])}</div><div class="n ${b?"b":""}">${f0(v[1])}</div>`).join("");
+    const par=[]; q("#t-tree").innerHTML=`<div class="h">Categoría</div><div class="h n">Personas</div><div class="h n">% fila superior</div>`+
+      R.map(([l,d,v,b])=>{par[d]=v[ti]; const pc=d?fmt(100*v[ti]/par[d-1]):"100.0";
+        return `<div class="lb ${b?"b":""}" ${d?`data-d="${d}"`:""} style="padding-left:${16+d*14}px;--i:${d*14}px">${l}</div><div class="n ${b?"b":""}">${f0(v[ti])}</div><div class="n ${b?"b":""}">${pc}</div>`}).join("");
     const pv=L.prov[state.liy], head=["Total del país","Hombres","Mujeres"];
     const rows=[...head.map(h=>[h,pv[h]]),...Object.entries(pv).filter(([l])=>!head.includes(l)).sort((a,b)=>b[1]-a[1])];
     hbars(q("#c-infp"),{rows,unit:"%",highlight:l=>head.includes(l)});
