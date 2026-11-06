@@ -299,7 +299,7 @@ def comparar(viejo, nuevo, ruta=""):
     cambios = []
     if isinstance(viejo, dict) and isinstance(nuevo, dict):
         for k in set(viejo) | set(nuevo):
-            if k in ("validaciones", "estado", "primera_deteccion", "ultima_descarga", "url"):
+            if k in ("validaciones", "estado", "primera_deteccion", "url"):
                 continue
             cambios += comparar(viejo.get(k), nuevo.get(k), f"{ruta}.{k}" if ruta else k)
     elif isinstance(viejo, list) and isinstance(nuevo, list):
@@ -318,6 +318,7 @@ def comparar(viejo, nuevo, ruta=""):
 def guardar_original(base, rep, periodo, sufijo, xml):
     d = os.path.join(base, "originales", rep["nombre"])
     os.makedirs(d, exist_ok=True)
+    xml = re.sub(rb"rs%3ASessionID=[^&\"]*", b"rs%3ASessionID=", xml)  # cambia en cada descarga
     with open(os.path.join(d, f"{periodo}{sufijo}.xml"), "wb") as f:
         f.write(xml)
 
@@ -424,7 +425,6 @@ def main():
         nuevo["estado"] = "validado" if all(x["ok"] for x in v) else "validado_con_observaciones"
         viejo = sal["periodos"].get(p)
         nuevo["primera_deteccion"] = viejo["primera_deteccion"] if viejo else HOY
-        nuevo["ultima_descarga"] = HOY
         if viejo:
             ch = comparar(viejo, nuevo)
             if ch:
@@ -449,7 +449,6 @@ def main():
                      estado="validado" if all(x["ok"] for x in v) else "validado_con_observaciones")
         viejo = cpp["periodos"].get(p)
         nuevo["primera_deteccion"] = viejo["primera_deteccion"] if viejo else HOY
-        nuevo["ultima_descarga"] = HOY
         if viejo:
             ch = comparar(viejo, nuevo)
             if ch:
@@ -464,7 +463,8 @@ def main():
             "sitio": SITIO, "unidad": "millones de USD", "universo": UNIVERSO,
             "fecha_publicacion": "El MEF no publica la fecha de publicación de cada mes; "
                                  "'primera_deteccion' es el día en que este proceso lo vio por primera vez.",
-            "actualizado": HOY}
+            "actualizado": HOY if (nuevos or revisados or not sal.get("actualizado"))
+                           else sal["actualizado"]}
     sal.update(meta, reporte=SALDOS,
                signos="saldo_final = saldo_inicial + desembolsos − amortizacion + variacion_cambiaria + ajustes_descuentos",
                periodos=dict(sorted(sal["periodos"].items())))
@@ -490,7 +490,7 @@ def main():
     cpp_solo = [[p, round(c["cpp_total"], 3)] for p, c in cpp["periodos"].items() if p not in sal["periodos"]]
     guardar(os.path.join(base, "resumen.json"), {
         "fuente": meta["fuente"], "sitio": SITIO, "unidad": "millones de USD; CPP en % anual",
-        "universo": UNIVERSO, "actualizado": HOY,
+        "universo": UNIVERSO, "actualizado": sal["actualizado"],
         "columnas": ["periodo", "total", "externa", "interna", "desembolsos", "amortizacion",
                      "intereses", "cpp_total", "cpp_externa", "cpp_interna",
                      "estado saldos+cpp (v=validado, o=con observaciones, -=sin dato)"],
