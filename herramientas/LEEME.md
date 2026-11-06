@@ -17,4 +17,4 @@
 - `registro.json`: cada ejecución, con meses nuevos, revisados y errores.
 - `originales/`: el XML exportado tal cual por el MEF.
 
-Lo corre todos los días el flujo `.github/workflows/deuda-mef.yml`.
+`python3 embeber_deuda.py ../datos/deuda/resumen.json ../index.html` copia el resumen dentro de la página (constante `DMEF`). Ambos pasos los corre todos los días el flujo `.github/workflows/deuda-mef.yml`.

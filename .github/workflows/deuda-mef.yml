@@ -35,11 +35,13 @@ jobs:
             grep '^ERROR' salida.txt | while read -r l; do echo "::warning::$l"; done
           fi
           rm salida.txt
+      - name: Pasar el resumen a index.html
+        run: python3 herramientas/embeber_deuda.py datos/deuda/resumen.json index.html
       - name: Guardar cambios
         run: |
           git config user.name "MacroPA datos"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add datos/deuda
+          git add datos/deuda index.html
           if git diff --cached --quiet; then
             echo "Sin cambios en los datos."
           else
