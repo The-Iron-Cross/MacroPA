@@ -416,6 +416,17 @@
    "nuevos": [],
    "revisados": [],
    "errores": []
+  },
+  {
+   "fecha": "2026-11-06T17:45:58+00:00",
+   "modo": "incremental",
+   "pedidos": {
+    "saldos": 13,
+    "cpp": 13
+   },
+   "nuevos": [],
+   "revisados": [],
+   "errores": []
   }
  ],
  "ultimo_periodo": {
