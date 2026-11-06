@@ -1,0 +1,48 @@
+name: Actualizar deuda pública (MEF)
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # todos los días, 8:00 a. m. hora de Panamá
+  workflow_dispatch:
+    inputs:
+      completo:
+        description: "Volver a bajar toda la historia (2015 en adelante)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deuda-mef
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Descargar y validar
+        working-directory: herramientas
+        run: |
+          if [ "${{ inputs.completo }}" = "true" ]; then MODO=--completo; else MODO=; fi
+          python3 deuda_mef.py ../datos/deuda $MODO | tee salida.txt
+          if grep -q '^ERROR' salida.txt; then
+            grep '^ERROR' salida.txt | while read -r l; do echo "::warning::$l"; done
+          fi
+          rm salida.txt
+      - name: Guardar cambios
+        run: |
+          git config user.name "MacroPA datos"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/deuda
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+          else
+            git commit -m "Deuda MEF: actualización automática $(date -u +%F)"
+            git push
+          fi
