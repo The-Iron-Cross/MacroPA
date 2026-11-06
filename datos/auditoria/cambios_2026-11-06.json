@@ -1,0 +1,314 @@
+{
+ "pib_pc": [
+  {
+   "anio": 2018,
+   "nominal_antes": 16187.0,
+   "nominal_nuevo": 16023,
+   "real_antes": 16187.0,
+   "real_base2018_nuevo": 16023,
+   "real_base2007_inec": 10051
+  },
+  {
+   "anio": 2019,
+   "nominal_antes": 16540.0,
+   "nominal_nuevo": 16343,
+   "real_antes": 16451.0,
+   "real_base2018_nuevo": 16255,
+   "real_base2007_inec": 10203
+  },
+  {
+   "anio": 2020,
+   "nominal_antes": 13336.0,
+   "nominal_nuevo": 13175,
+   "real_antes": 13331.0,
+   "real_base2018_nuevo": 13169,
+   "real_base2007_inec": 8255
+  },
+  {
+   "anio": 2021,
+   "nominal_antes": 15538.0,
+   "nominal_nuevo": 15367,
+   "real_antes": 15315.0,
+   "real_base2018_nuevo": 15147,
+   "real_base2007_inec": 9392
+  },
+  {
+   "anio": 2022,
+   "nominal_antes": 17400.0,
+   "nominal_nuevo": 17222,
+   "real_antes": 16781.0,
+   "real_base2018_nuevo": 16610,
+   "real_base2007_inec": null
+  },
+  {
+   "anio": 2023,
+   "nominal_antes": 18822.0,
+   "nominal_nuevo": 18642,
+   "real_antes": 17752.0,
+   "real_base2018_nuevo": 17582,
+   "real_base2007_inec": null
+  },
+  {
+   "anio": 2024,
+   "nominal_antes": 19187.0,
+   "nominal_nuevo": 19029,
+   "real_antes": 18011.0,
+   "real_base2018_nuevo": 17857,
+   "real_base2007_inec": null
+  },
+  {
+   "anio": 2025,
+   "nominal_antes": 19673.0,
+   "nominal_nuevo": 19724,
+   "real_antes": 18431.0,
+   "real_base2018_nuevo": 18436,
+   "real_base2007_inec": null
+  }
+ ],
+ "pib_nom": [
+  {
+   "anio": 2023,
+   "antes": 83812.2,
+   "nuevo": 83816.6
+  },
+  {
+   "anio": 2024,
+   "antes": 86524.0,
+   "nuevo": 86557.6
+  },
+  {
+   "anio": 2025,
+   "antes": 90462.6,
+   "nuevo": 90698.8
+  }
+ ],
+ "consistencia_pc": [
+  {
+   "anio": 2018,
+   "poblacion_implicita": 4201112,
+   "poblacion_app": 4201112.0
+  },
+  {
+   "anio": 2019,
+   "poblacion_implicita": 4269777,
+   "poblacion_app": 4269777.0
+  },
+  {
+   "anio": 2020,
+   "poblacion_implicita": 4331049,
+   "poblacion_app": 4331049.0
+  },
+  {
+   "anio": 2021,
+   "poblacion_implicita": 4385682,
+   "poblacion_app": 4385682.0
+  },
+  {
+   "anio": 2022,
+   "poblacion_implicita": 4440735,
+   "poblacion_app": 4440735.0
+  },
+  {
+   "anio": 2023,
+   "poblacion_implicita": 4496166,
+   "poblacion_app": 4496166.0
+  },
+  {
+   "anio": 2024,
+   "poblacion_implicita": 4548681,
+   "poblacion_app": 4548681.0
+  },
+  {
+   "anio": 2025,
+   "poblacion_implicita": 4598365,
+   "poblacion_app": 4598365.0
+  }
+ ],
+ "imae": [
+  {
+   "mes": "ene-18",
+   "antes": 10.1,
+   "acumulada_nueva": null,
+   "interanual": 10.2,
+   "origen": "indice"
+  },
+  {
+   "mes": "ene-19",
+   "antes": 1.3,
+   "acumulada_nueva": null,
+   "interanual": 1.5,
+   "origen": "indice"
+  },
+  {
+   "mes": "feb-19",
+   "antes": 3.6,
+   "acumulada_nueva": 3.8,
+   "interanual": 6.4,
+   "origen": "indice"
+  },
+  {
+   "mes": "mar-19",
+   "antes": 2.0,
+   "acumulada_nueva": 2.2,
+   "interanual": -0.8,
+   "origen": "indice"
+  },
+  {
+   "mes": "abr-19",
+   "antes": 1.1,
+   "acumulada_nueva": 1.4,
+   "interanual": -1.1,
+   "origen": "indice"
+  },
+  {
+   "mes": "may-19",
+   "antes": 2.3,
+   "acumulada_nueva": 2.6,
+   "interanual": 7.6,
+   "origen": "indice"
+  },
+  {
+   "mes": "jun-19",
+   "antes": 1.3,
+   "acumulada_nueva": 1.6,
+   "interanual": -3.0,
+   "origen": "indice"
+  },
+  {
+   "mes": "jul-19",
+   "antes": 1.7,
+   "acumulada_nueva": 2.0,
+   "interanual": 4.1,
+   "origen": "indice"
+  },
+  {
+   "mes": "ago-19",
+   "antes": 2.1,
+   "acumulada_nueva": 2.4,
+   "interanual": 5.1,
+   "origen": "indice"
+  },
+  {
+   "mes": "sep-19",
+   "antes": 1.8,
+   "acumulada_nueva": 2.1,
+   "interanual": 0.2,
+   "origen": "indice"
+  },
+  {
+   "mes": "oct-19",
+   "antes": 2.2,
+   "acumulada_nueva": 2.5,
+   "interanual": 5.4,
+   "origen": "indice"
+  },
+  {
+   "mes": "nov-19",
+   "antes": 1.9,
+   "acumulada_nueva": 2.2,
+   "interanual": -0.6,
+   "origen": "indice"
+  },
+  {
+   "mes": "dic-19",
+   "antes": 2.1,
+   "acumulada_nueva": 2.4,
+   "interanual": 4.7,
+   "origen": "indice"
+  },
+  {
+   "mes": "ene-20",
+   "antes": 12.5,
+   "acumulada_nueva": null,
+   "interanual": 12.5,
+   "origen": "indice"
+  },
+  {
+   "mes": "ene-21",
+   "antes": 0.0,
+   "acumulada_nueva": null,
+   "interanual": -32.8,
+   "origen": "indice"
+  },
+  {
+   "mes": "abr-21",
+   "antes": -3.1,
+   "acumulada_nueva": -3.0,
+   "interanual": 39.8,
+   "origen": "indice"
+  },
+  {
+   "mes": "may-21",
+   "antes": 6.3,
+   "acumulada_nueva": 6.4,
+   "interanual": 66.9,
+   "origen": "indice"
+  },
+  {
+   "mes": "ago-21",
+   "antes": 17.5,
+   "acumulada_nueva": 17.6,
+   "interanual": 42.4,
+   "origen": "indice"
+  },
+  {
+   "mes": "ene-22",
+   "antes": 0.0,
+   "acumulada_nueva": null,
+   "interanual": 35.6,
+   "origen": "cuadro"
+  },
+  {
+   "mes": "ene-23",
+   "antes": 0.0,
+   "acumulada_nueva": null,
+   "interanual": 5.1,
+   "origen": "cuadro"
+  },
+  {
+   "mes": "ene-24",
+   "antes": 0.0,
+   "acumulada_nueva": null,
+   "interanual": 3.5,
+   "origen": "cuadro"
+  },
+  {
+   "mes": "ene-25",
+   "antes": 0.0,
+   "acumulada_nueva": null,
+   "interanual": 6.7,
+   "origen": "cuadro"
+  },
+  {
+   "mes": "ene-26",
+   "antes": 0.0,
+   "acumulada_nueva": null,
+   "interanual": 4.1,
+   "origen": "cuadro"
+  },
+  {
+   "mes": "ago-26",
+   "antes": null,
+   "acumulada_nueva": 6.1,
+   "interanual": 7.4,
+   "origen": "cuadro"
+  }
+ ],
+ "act": {
+  "2024": {
+   "antes": 22,
+   "despues": 22,
+   "duplicados_quitados": 0
+  },
+  "2025": {
+   "antes": 44,
+   "despues": 22,
+   "duplicados_quitados": 22
+  },
+  "2026": {
+   "antes": 22,
+   "despues": 22,
+   "duplicados_quitados": 0
+  }
+ }
+}
