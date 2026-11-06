@@ -1,0 +1,2002 @@
+{
+ "fuente": {
+  "pagina": "https://dgi.mef.gob.pa/Transparencia/InformesT",
+  "url": "https://dgi.mef.gob.pa/Transparencia/IFP/INFORME%20PRELIMINAR-abr25.pdf",
+  "etiqueta_en_pagina": "ABRIL",
+  "seccion_en_pagina": 2025,
+  "archivo": "INFORME PRELIMINAR-abr25.pdf",
+  "sha256": "581a5b5807b48d2d556a10a51cf3b6b8768b491043f2ca07c3f5836c95a1db52",
+  "bytes": 1532106,
+  "paginas": 15,
+  "pdf_creado": "D:20250507153430-05'00'",
+  "pdf_modificado": "D:20250507153431-05'00'",
+  "pdf_programa": "Microsoft® Word 2016"
+ },
+ "anio": 2025,
+ "mes": 4,
+ "periodo": "2025-04",
+ "condicion": "preliminar",
+ "unidad": "millones de balboas",
+ "cuadros": {
+  "resumen_mes_efectivo": {
+   "pagina": 1,
+   "filas": [
+    {
+     "codigo": "total_corrientes",
+     "etiqueta": "TOTAL INGRESOS CORRIENTES",
+     "efectivo": 622.861,
+     "presupuesto": 646.64,
+     "dif_presupuesto": -23.779,
+     "pct_presupuesto": -3.7,
+     "anio_anterior": 494.429,
+     "dif_anio_anterior": 128.432,
+     "pct_anio_anterior": 26.0
+    },
+    {
+     "codigo": "tributarios",
+     "etiqueta": "I. INGRESOS TRIBUTARIOS",
+     "efectivo": 477.495,
+     "presupuesto": 420.569,
+     "dif_presupuesto": 56.927,
+     "pct_presupuesto": 13.5,
+     "anio_anterior": 374.614,
+     "dif_anio_anterior": 102.882,
+     "pct_anio_anterior": 27.5
+    },
+    {
+     "codigo": "directos",
+     "etiqueta": "Impuestos Directos",
+     "efectivo": 286.388,
+     "presupuesto": 210.19,
+     "dif_presupuesto": 76.197,
+     "pct_presupuesto": 36.3,
+     "anio_anterior": 169.587,
+     "dif_anio_anterior": 116.801,
+     "pct_anio_anterior": 68.9
+    },
+    {
+     "codigo": "indirectos",
+     "etiqueta": "Impuestos Indirectos",
+     "efectivo": 191.107,
+     "presupuesto": 210.378,
+     "dif_presupuesto": -19.271,
+     "pct_presupuesto": -9.2,
+     "anio_anterior": 205.026,
+     "dif_anio_anterior": -13.919,
+     "pct_anio_anterior": -6.8
+    },
+    {
+     "codigo": "no_tributarios",
+     "etiqueta": "II. INGRESOS NO TRIBUTARIOS",
+     "efectivo": 142.799,
+     "presupuesto": 219.207,
+     "dif_presupuesto": -76.408,
+     "pct_presupuesto": -34.9,
+     "anio_anterior": 88.286,
+     "dif_anio_anterior": 54.512,
+     "pct_anio_anterior": 61.7
+    },
+    {
+     "codigo": "tasas_derechos_otros",
+     "etiqueta": "Tasas, Derechos y Otros",
+     "efectivo": 96.682,
+     "presupuesto": 188.011,
+     "dif_presupuesto": -91.329,
+     "pct_presupuesto": -48.6,
+     "anio_anterior": 71.905,
+     "dif_anio_anterior": 24.777,
+     "pct_anio_anterior": 34.5
+    },
+    {
+     "codigo": "utilidades_aportes",
+     "etiqueta": "Participación de Utilidades y Aportes",
+     "efectivo": 46.116,
+     "presupuesto": 31.196,
+     "dif_presupuesto": 14.92,
+     "pct_presupuesto": 47.8,
+     "anio_anterior": 16.381,
+     "dif_anio_anterior": 29.735,
+     "pct_anio_anterior": 181.5
+    },
+    {
+     "codigo": "otros_corrientes",
+     "etiqueta": "III. OTROS INGRESOS CORRIENTES",
+     "efectivo": 2.567,
+     "presupuesto": 6.864,
+     "dif_presupuesto": -4.297,
+     "pct_presupuesto": -62.6,
+     "anio_anterior": 31.529,
+     "dif_anio_anterior": -28.962,
+     "pct_anio_anterior": -91.9
+    }
+   ]
+  },
+  "resumen_acumulado_efectivo": {
+   "pagina": 1,
+   "filas": [
+    {
+     "codigo": "total_corrientes",
+     "etiqueta": "TOTAL INGRESOS CORRIENTES",
+     "efectivo": 2560.085,
+     "presupuesto": 2741.153,
+     "dif_presupuesto": -181.067,
+     "pct_presupuesto": -6.6,
+     "anio_anterior": 2238.105,
+     "dif_anio_anterior": 321.98,
+     "pct_anio_anterior": 14.4
+    },
+    {
+     "codigo": "tributarios",
+     "etiqueta": "I. INGRESOS TRIBUTARIOS",
+     "efectivo": 2017.757,
+     "presupuesto": 1953.655,
+     "dif_presupuesto": 64.102,
+     "pct_presupuesto": 3.3,
+     "anio_anterior": 1775.565,
+     "dif_anio_anterior": 242.192,
+     "pct_anio_anterior": 13.6
+    },
+    {
+     "codigo": "directos",
+     "etiqueta": "Impuestos Directos",
+     "efectivo": 1209.166,
+     "presupuesto": 1098.008,
+     "dif_presupuesto": 111.158,
+     "pct_presupuesto": 10.1,
+     "anio_anterior": 947.702,
+     "dif_anio_anterior": 261.464,
+     "pct_anio_anterior": 27.6
+    },
+    {
+     "codigo": "indirectos",
+     "etiqueta": "Impuestos Indirectos",
+     "efectivo": 808.59,
+     "presupuesto": 855.647,
+     "dif_presupuesto": -47.056,
+     "pct_presupuesto": -5.5,
+     "anio_anterior": 827.862,
+     "dif_anio_anterior": -19.272,
+     "pct_anio_anterior": -2.3
+    },
+    {
+     "codigo": "no_tributarios",
+     "etiqueta": "II. INGRESOS NO TRIBUTARIOS",
+     "efectivo": 527.294,
+     "presupuesto": 764.538,
+     "dif_presupuesto": -237.244,
+     "pct_presupuesto": -31.0,
+     "anio_anterior": 412.952,
+     "dif_anio_anterior": 114.343,
+     "pct_anio_anterior": 27.7
+    },
+    {
+     "codigo": "tasas_derechos_otros",
+     "etiqueta": "Tasas, Derechos y Otros",
+     "efectivo": 339.223,
+     "presupuesto": 642.024,
+     "dif_presupuesto": -302.801,
+     "pct_presupuesto": -47.2,
+     "anio_anterior": 290.986,
+     "dif_anio_anterior": 48.237,
+     "pct_anio_anterior": 16.6
+    },
+    {
+     "codigo": "utilidades_aportes",
+     "etiqueta": "Participación de Utilidades y Aportes",
+     "efectivo": 188.072,
+     "presupuesto": 122.514,
+     "dif_presupuesto": 65.558,
+     "pct_presupuesto": 53.5,
+     "anio_anterior": 121.966,
+     "dif_anio_anterior": 66.106,
+     "pct_anio_anterior": 54.2
+    },
+    {
+     "codigo": "otros_corrientes",
+     "etiqueta": "III. OTROS INGRESOS CORRIENTES",
+     "efectivo": 15.034,
+     "presupuesto": 22.96,
+     "dif_presupuesto": -7.925,
+     "pct_presupuesto": -34.5,
+     "anio_anterior": 49.589,
+     "dif_anio_anterior": -34.554,
+     "pct_anio_anterior": -69.7
+    }
+   ]
+  },
+  "tributarios_mes_efectivo": {
+   "pagina": 2,
+   "filas": [
+    {
+     "codigo": "tributarios",
+     "etiqueta": "I. INGRESOS TRIBUTARIOS",
+     "efectivo": 477.495,
+     "presupuesto": 420.569,
+     "dif_presupuesto": 56.927,
+     "pct_presupuesto": 13.5,
+     "anio_anterior": 374.614,
+     "dif_anio_anterior": 102.882,
+     "pct_anio_anterior": 27.5
+    },
+    {
+     "codigo": "directos",
+     "etiqueta": "IMPUESTOS DIRECTOS",
+     "efectivo": 286.388,
+     "presupuesto": 210.19,
+     "dif_presupuesto": 76.197,
+     "pct_presupuesto": 36.3,
+     "anio_anterior": 169.587,
+     "dif_anio_anterior": 116.801,
+     "pct_anio_anterior": 68.9
+    },
+    {
+     "codigo": "renta",
+     "etiqueta": "Renta",
+     "efectivo": 225.502,
+     "presupuesto": 168.477,
+     "dif_presupuesto": 57.024,
+     "pct_presupuesto": 33.8,
+     "anio_anterior": 124.771,
+     "dif_anio_anterior": 100.731,
+     "pct_anio_anterior": 80.7
+    },
+    {
+     "codigo": "renta_juridica",
+     "etiqueta": "Jurídica",
+     "efectivo": 18.479,
+     "presupuesto": 14.452,
+     "dif_presupuesto": 4.028,
+     "pct_presupuesto": 27.9,
+     "anio_anterior": 19.585,
+     "dif_anio_anterior": -1.105,
+     "pct_anio_anterior": -5.6
+    },
+    {
+     "codigo": "renta_natural",
+     "etiqueta": "Natural",
+     "efectivo": 137.1,
+     "presupuesto": 114.292,
+     "dif_presupuesto": 22.808,
+     "pct_presupuesto": 20.0,
+     "anio_anterior": 65.257,
+     "dif_anio_anterior": 71.843,
+     "pct_anio_anterior": 110.1
+    },
+    {
+     "codigo": "renta_dividendos_complementario",
+     "etiqueta": "Dividendos y Complementario",
+     "efectivo": 18.292,
+     "presupuesto": 27.739,
+     "dif_presupuesto": -9.447,
+     "pct_presupuesto": -34.1,
+     "anio_anterior": 28.284,
+     "dif_anio_anterior": -9.991,
+     "pct_anio_anterior": -35.3
+    },
+    {
+     "codigo": "renta_otros",
+     "etiqueta": "Otros",
+     "efectivo": 51.63,
+     "presupuesto": 11.994,
+     "dif_presupuesto": 39.636,
+     "pct_presupuesto": 330.5,
+     "anio_anterior": 11.645,
+     "dif_anio_anterior": 39.984,
+     "pct_anio_anterior": 343.4
+    },
+    {
+     "codigo": "inmuebles",
+     "etiqueta": "Inmuebles",
+     "efectivo": 50.086,
+     "presupuesto": 20.663,
+     "dif_presupuesto": 29.423,
+     "pct_presupuesto": 142.4,
+     "anio_anterior": 24.061,
+     "dif_anio_anterior": 26.025,
+     "pct_anio_anterior": 108.2
+    },
+    {
+     "codigo": "aviso_operacion",
+     "etiqueta": "Avisos de Operación de Empresas",
+     "efectivo": 10.8,
+     "presupuesto": 8.496,
+     "dif_presupuesto": 2.305,
+     "pct_presupuesto": 27.1,
+     "anio_anterior": 20.755,
+     "dif_anio_anterior": -9.955,
+     "pct_anio_anterior": -48.0
+    },
+    {
+     "codigo": "seguro_educativo",
+     "etiqueta": "Seguro Educativo",
+     "efectivo": 0.0,
+     "presupuesto": 12.554,
+     "dif_presupuesto": -12.554,
+     "pct_presupuesto": -100.0,
+     "anio_anterior": 0.0,
+     "dif_anio_anterior": 0.0,
+     "pct_anio_anterior": null
+    },
+    {
+     "codigo": "indirectos",
+     "etiqueta": "IMPUESTOS INDIRECTOS",
+     "efectivo": 191.107,
+     "presupuesto": 210.378,
+     "dif_presupuesto": -19.271,
+     "pct_presupuesto": -9.2,
+     "anio_anterior": 205.026,
+     "dif_anio_anterior": -13.919,
+     "pct_anio_anterior": -6.8
+    },
+    {
+     "codigo": "itbms_ventas",
+     "etiqueta": "I.T.B.M.S. - Ventas",
+     "efectivo": 72.668,
+     "presupuesto": 76.683,
+     "dif_presupuesto": -4.015,
+     "pct_presupuesto": -5.2,
+     "anio_anterior": 78.626,
+     "dif_anio_anterior": -5.958,
+     "pct_anio_anterior": -7.6
+    },
+    {
+     "codigo": "itbms_importacion",
+     "etiqueta": "I.T.B.M.S. - Importación",
+     "efectivo": 38.978,
+     "presupuesto": 46.192,
+     "dif_presupuesto": -7.214,
+     "pct_presupuesto": -15.6,
+     "anio_anterior": 46.438,
+     "dif_anio_anterior": -7.46,
+     "pct_anio_anterior": -16.1
+    },
+    {
+     "codigo": "importacion",
+     "etiqueta": "Importación",
+     "efectivo": 21.091,
+     "presupuesto": 23.494,
+     "dif_presupuesto": -2.403,
+     "pct_presupuesto": -10.2,
+     "anio_anterior": 24.113,
+     "dif_anio_anterior": -3.022,
+     "pct_anio_anterior": -12.5
+    },
+    {
+     "codigo": "consumo_combustible",
+     "etiqueta": "Consumo de Combustible",
+     "efectivo": 12.268,
+     "presupuesto": 21.105,
+     "dif_presupuesto": -8.837,
+     "pct_presupuesto": -41.9,
+     "anio_anterior": 13.938,
+     "dif_anio_anterior": -1.67,
+     "pct_anio_anterior": -12.0
+    },
+    {
+     "codigo": "selectivo_consumo",
+     "etiqueta": "Impuestos Selectivos al Consumo",
+     "efectivo": 32.959,
+     "presupuesto": 33.125,
+     "dif_presupuesto": -0.166,
+     "pct_presupuesto": -0.5,
+     "anio_anterior": 32.482,
+     "dif_anio_anterior": 0.477,
+     "pct_anio_anterior": 1.5
+    },
+    {
+     "codigo": "indirectos_otros",
+     "etiqueta": "Otros",
+     "efectivo": 13.144,
+     "presupuesto": 9.78,
+     "dif_presupuesto": 3.364,
+     "pct_presupuesto": 34.4,
+     "anio_anterior": 9.429,
+     "dif_anio_anterior": 3.715,
+     "pct_anio_anterior": 39.4
+    }
+   ]
+  },
+  "tributarios_acumulado_efectivo": {
+   "pagina": 2,
+   "filas": [
+    {
+     "codigo": "tributarios",
+     "etiqueta": "I. INGRESOS TRIBUTARIOS",
+     "efectivo": 2017.757,
+     "presupuesto": 1953.655,
+     "dif_presupuesto": 64.102,
+     "pct_presupuesto": 3.3,
+     "anio_anterior": 1775.565,
+     "dif_anio_anterior": 242.192,
+     "pct_anio_anterior": 13.6
+    },
+    {
+     "codigo": "directos",
+     "etiqueta": "IMPUESTOS DIRECTOS",
+     "efectivo": 1209.166,
+     "presupuesto": 1098.008,
+     "dif_presupuesto": 111.158,
+     "pct_presupuesto": 10.1,
+     "anio_anterior": 947.702,
+     "dif_anio_anterior": 261.464,
+     "pct_anio_anterior": 27.6
+    },
+    {
+     "codigo": "renta",
+     "etiqueta": "Renta",
+     "efectivo": 984.506,
+     "presupuesto": 913.4,
+     "dif_presupuesto": 71.107,
+     "pct_presupuesto": 7.8,
+     "anio_anterior": 777.871,
+     "dif_anio_anterior": 206.635,
+     "pct_anio_anterior": 26.6
+    },
+    {
+     "codigo": "renta_juridica",
+     "etiqueta": "Jurídica",
+     "efectivo": 236.496,
+     "presupuesto": 251.345,
+     "dif_presupuesto": -14.849,
+     "pct_presupuesto": -5.9,
+     "anio_anterior": 232.116,
+     "dif_anio_anterior": 4.38,
+     "pct_anio_anterior": 1.9
+    },
+    {
+     "codigo": "renta_natural",
+     "etiqueta": "Natural",
+     "efectivo": 528.765,
+     "presupuesto": 468.927,
+     "dif_presupuesto": 59.838,
+     "pct_presupuesto": 12.8,
+     "anio_anterior": 357.106,
+     "dif_anio_anterior": 171.66,
+     "pct_anio_anterior": 48.1
+    },
+    {
+     "codigo": "renta_dividendos_complementario",
+     "etiqueta": "Dividendos y Complementario",
+     "efectivo": 132.5,
+     "presupuesto": 132.549,
+     "dif_presupuesto": -0.049,
+     "pct_presupuesto": -0.0,
+     "anio_anterior": 130.108,
+     "dif_anio_anterior": 2.392,
+     "pct_anio_anterior": 1.8
+    },
+    {
+     "codigo": "renta_otros",
+     "etiqueta": "Otros",
+     "efectivo": 86.746,
+     "presupuesto": 60.579,
+     "dif_presupuesto": 26.167,
+     "pct_presupuesto": 43.2,
+     "anio_anterior": 58.542,
+     "dif_anio_anterior": 28.204,
+     "pct_anio_anterior": 48.2
+    },
+    {
+     "codigo": "inmuebles",
+     "etiqueta": "Inmuebles",
+     "efectivo": 92.264,
+     "presupuesto": 36.717,
+     "dif_presupuesto": 55.547,
+     "pct_presupuesto": 151.3,
+     "anio_anterior": 39.792,
+     "dif_anio_anterior": 52.473,
+     "pct_anio_anterior": 131.9
+    },
+    {
+     "codigo": "aviso_operacion",
+     "etiqueta": "Avisos de Operación de Empresas",
+     "efectivo": 96.843,
+     "presupuesto": 98.97,
+     "dif_presupuesto": -2.127,
+     "pct_presupuesto": -2.1,
+     "anio_anterior": 95.129,
+     "dif_anio_anterior": 1.715,
+     "pct_anio_anterior": 1.8
+    },
+    {
+     "codigo": "seguro_educativo",
+     "etiqueta": "Seguro Educativo",
+     "efectivo": 35.553,
+     "presupuesto": 48.921,
+     "dif_presupuesto": -13.369,
+     "pct_presupuesto": -27.3,
+     "anio_anterior": 34.911,
+     "dif_anio_anterior": 0.642,
+     "pct_anio_anterior": 1.8
+    },
+    {
+     "codigo": "indirectos",
+     "etiqueta": "IMPUESTOS INDIRECTOS",
+     "efectivo": 808.59,
+     "presupuesto": 855.647,
+     "dif_presupuesto": -47.056,
+     "pct_presupuesto": -5.5,
+     "anio_anterior": 827.862,
+     "dif_anio_anterior": -19.272,
+     "pct_anio_anterior": -2.3
+    },
+    {
+     "codigo": "itbms_ventas",
+     "etiqueta": "I.T.B.M.S. - Ventas",
+     "efectivo": 313.258,
+     "presupuesto": 335.007,
+     "dif_presupuesto": -21.749,
+     "pct_presupuesto": -6.5,
+     "anio_anterior": 341.998,
+     "dif_anio_anterior": -28.74,
+     "pct_anio_anterior": -8.4
+    },
+    {
+     "codigo": "itbms_importacion",
+     "etiqueta": "I.T.B.M.S. - Importación",
+     "efectivo": 160.046,
+     "presupuesto": 163.587,
+     "dif_presupuesto": -3.541,
+     "pct_presupuesto": -2.2,
+     "anio_anterior": 161.974,
+     "dif_anio_anterior": -1.928,
+     "pct_anio_anterior": -1.2
+    },
+    {
+     "codigo": "importacion",
+     "etiqueta": "Importación",
+     "efectivo": 91.633,
+     "presupuesto": 89.942,
+     "dif_presupuesto": 1.691,
+     "pct_presupuesto": 1.9,
+     "anio_anterior": 89.887,
+     "dif_anio_anterior": 1.746,
+     "pct_anio_anterior": 1.9
+    },
+    {
+     "codigo": "consumo_combustible",
+     "etiqueta": "Consumo de Combustible",
+     "efectivo": 34.188,
+     "presupuesto": 72.289,
+     "dif_presupuesto": -38.101,
+     "pct_presupuesto": -52.7,
+     "anio_anterior": 47.775,
+     "dif_anio_anterior": -13.586,
+     "pct_anio_anterior": -28.4
+    },
+    {
+     "codigo": "selectivo_consumo",
+     "etiqueta": "Impuestos Selectivos al Consumo",
+     "efectivo": 139.661,
+     "presupuesto": 129.958,
+     "dif_presupuesto": 9.703,
+     "pct_presupuesto": 7.5,
+     "anio_anterior": 123.916,
+     "dif_anio_anterior": 15.745,
+     "pct_anio_anterior": 12.7
+    },
+    {
+     "codigo": "indirectos_otros",
+     "etiqueta": "Otros",
+     "efectivo": 69.804,
+     "presupuesto": 64.865,
+     "dif_presupuesto": 4.939,
+     "pct_presupuesto": 7.6,
+     "anio_anterior": 62.313,
+     "dif_anio_anterior": 7.492,
+     "pct_anio_anterior": 12.0
+    }
+   ]
+  },
+  "no_tributarios_mes_efectivo": {
+   "pagina": 4,
+   "filas": [
+    {
+     "codigo": "no_tributarios",
+     "etiqueta": "II. INGRESOS NO TRIBUTARIOS",
+     "efectivo": 142.799,
+     "presupuesto": 219.207,
+     "dif_presupuesto": -76.408,
+     "pct_presupuesto": -34.9,
+     "anio_anterior": 88.286,
+     "dif_anio_anterior": 54.512,
+     "pct_anio_anterior": 61.7
+    },
+    {
+     "codigo": "tasas_derechos_otros",
+     "etiqueta": "TASAS, DERECHOS Y OTROS",
+     "efectivo": 96.682,
+     "presupuesto": 188.011,
+     "dif_presupuesto": -91.329,
+     "pct_presupuesto": -48.6,
+     "anio_anterior": 71.905,
+     "dif_anio_anterior": 24.777,
+     "pct_anio_anterior": 34.5
+    },
+    {
+     "codigo": "canal_peajes_servicios",
+     "etiqueta": "Peajes y Serv, del Canal",
+     "efectivo": 49.436,
+     "presupuesto": 43.333,
+     "dif_presupuesto": 6.102,
+     "pct_presupuesto": 14.1,
+     "anio_anterior": 38.597,
+     "dif_anio_anterior": 10.839,
+     "pct_anio_anterior": 28.1
+    },
+    {
+     "codigo": "tasa_anual_sa",
+     "etiqueta": "Tasa Anual (Sociedades Anónimas)",
+     "efectivo": 4.107,
+     "presupuesto": 10.634,
+     "dif_presupuesto": -6.526,
+     "pct_presupuesto": -61.4,
+     "anio_anterior": 4.119,
+     "dif_anio_anterior": -0.012,
+     "pct_anio_anterior": -0.3
+    },
+    {
+     "codigo": "concesiones",
+     "etiqueta": "Concesiones",
+     "efectivo": 19.204,
+     "presupuesto": 16.051,
+     "dif_presupuesto": 3.153,
+     "pct_presupuesto": 19.6,
+     "anio_anterior": 4.679,
+     "dif_anio_anterior": 14.525,
+     "pct_anio_anterior": 310.4
+    },
+    {
+     "codigo": "tasas_otros",
+     "etiqueta": "Otros",
+     "efectivo": 23.935,
+     "presupuesto": 117.993,
+     "dif_presupuesto": -94.058,
+     "pct_presupuesto": -79.7,
+     "anio_anterior": 24.51,
+     "dif_anio_anterior": -0.575,
+     "pct_anio_anterior": -2.3
+    },
+    {
+     "codigo": "utilidades_aportes",
+     "etiqueta": "PART. DE UTILIDADES Y APORTES",
+     "efectivo": 46.116,
+     "presupuesto": 31.196,
+     "dif_presupuesto": 14.92,
+     "pct_presupuesto": 47.8,
+     "anio_anterior": 16.381,
+     "dif_anio_anterior": 29.735,
+     "pct_anio_anterior": 181.5
+    },
+    {
+     "codigo": "dividendos_canal",
+     "etiqueta": "Dividendos del Canal",
+     "efectivo": 0.0,
+     "presupuesto": 0.0,
+     "dif_presupuesto": 0.0,
+     "pct_presupuesto": null,
+     "anio_anterior": 0.0,
+     "dif_anio_anterior": 0.0,
+     "pct_anio_anterior": null
+    },
+    {
+     "codigo": "dividendos_capital_mixto",
+     "etiqueta": "Dividendos de empresas con capital mixto",
+     "efectivo": 23.447,
+     "presupuesto": 0.0,
+     "dif_presupuesto": 23.447,
+     "pct_presupuesto": null,
+     "anio_anterior": 0.513,
+     "dif_anio_anterior": 22.934,
+     "pct_anio_anterior": 4470.6
+    },
+    {
+     "codigo": "otras_entidades",
+     "etiqueta": "Otras entidades gubernamentales",
+     "efectivo": 22.669,
+     "presupuesto": 31.196,
+     "dif_presupuesto": -8.527,
+     "pct_presupuesto": -27.3,
+     "anio_anterior": 15.868,
+     "dif_anio_anterior": 6.801,
+     "pct_anio_anterior": 42.9
+    },
+    {
+     "codigo": "otros_corrientes",
+     "etiqueta": "III. OTROS INGRESOS CORRIENTES",
+     "efectivo": 2.567,
+     "presupuesto": 6.864,
+     "dif_presupuesto": -4.297,
+     "pct_presupuesto": -62.6,
+     "anio_anterior": 31.529,
+     "dif_anio_anterior": -28.962,
+     "pct_anio_anterior": -91.9
+    }
+   ]
+  },
+  "no_tributarios_acumulado_efectivo": {
+   "pagina": 4,
+   "filas": [
+    {
+     "codigo": "no_tributarios",
+     "etiqueta": "II. INGRESOS NO TRIBUTARIOS",
+     "efectivo": 527.294,
+     "presupuesto": 764.538,
+     "dif_presupuesto": -237.244,
+     "pct_presupuesto": -31.0,
+     "anio_anterior": 412.952,
+     "dif_anio_anterior": 114.343,
+     "pct_anio_anterior": 27.7
+    },
+    {
+     "codigo": "tasas_derechos_otros",
+     "etiqueta": "TASAS, DERECHOS Y OTROS",
+     "efectivo": 339.223,
+     "presupuesto": 642.024,
+     "dif_presupuesto": -302.801,
+     "pct_presupuesto": -47.2,
+     "anio_anterior": 290.986,
+     "dif_anio_anterior": 48.237,
+     "pct_anio_anterior": 16.6
+    },
+    {
+     "codigo": "canal_peajes_servicios",
+     "etiqueta": "Peajes y Serv, del Canal",
+     "efectivo": 188.223,
+     "presupuesto": 173.333,
+     "dif_presupuesto": 14.889,
+     "pct_presupuesto": 8.6,
+     "anio_anterior": 146.895,
+     "dif_anio_anterior": 41.327,
+     "pct_anio_anterior": 28.1
+    },
+    {
+     "codigo": "tasa_anual_sa",
+     "etiqueta": "Tasa Anual (Sociedades Anónimas)",
+     "efectivo": 25.174,
+     "presupuesto": 31.901,
+     "dif_presupuesto": -6.727,
+     "pct_presupuesto": -21.1,
+     "anio_anterior": 20.934,
+     "dif_anio_anterior": 4.24,
+     "pct_anio_anterior": 20.3
+    },
+    {
+     "codigo": "concesiones",
+     "etiqueta": "Concesiones",
+     "efectivo": 33.765,
+     "presupuesto": 64.204,
+     "dif_presupuesto": -30.44,
+     "pct_presupuesto": -47.4,
+     "anio_anterior": 19.258,
+     "dif_anio_anterior": 14.506,
+     "pct_anio_anterior": 75.3
+    },
+    {
+     "codigo": "tasas_otros",
+     "etiqueta": "Otros",
+     "efectivo": 92.061,
+     "presupuesto": 372.586,
+     "dif_presupuesto": -280.524,
+     "pct_presupuesto": -75.3,
+     "anio_anterior": 103.898,
+     "dif_anio_anterior": -11.836,
+     "pct_anio_anterior": -11.4
+    },
+    {
+     "codigo": "utilidades_aportes",
+     "etiqueta": "PART. DE UTILIDADES Y APORTES",
+     "efectivo": 188.072,
+     "presupuesto": 122.514,
+     "dif_presupuesto": 65.558,
+     "pct_presupuesto": 53.5,
+     "anio_anterior": 121.966,
+     "dif_anio_anterior": 66.106,
+     "pct_anio_anterior": 54.2
+    },
+    {
+     "codigo": "dividendos_canal",
+     "etiqueta": "Dividendos del Canal",
+     "efectivo": 0.0,
+     "presupuesto": 0.0,
+     "dif_presupuesto": 0.0,
+     "pct_presupuesto": null,
+     "anio_anterior": 0.0,
+     "dif_anio_anterior": 0.0,
+     "pct_anio_anterior": null
+    },
+    {
+     "codigo": "dividendos_capital_mixto",
+     "etiqueta": "Dividendos de empresas con capital mixto",
+     "efectivo": 28.455,
+     "presupuesto": 0.0,
+     "dif_presupuesto": 28.455,
+     "pct_presupuesto": null,
+     "anio_anterior": 19.414,
+     "dif_anio_anterior": 9.041,
+     "pct_anio_anterior": 46.6
+    },
+    {
+     "codigo": "otras_entidades",
+     "etiqueta": "Otras entidades gubernamentales",
+     "efectivo": 159.616,
+     "presupuesto": 122.514,
+     "dif_presupuesto": 37.102,
+     "pct_presupuesto": 30.3,
+     "anio_anterior": 102.552,
+     "dif_anio_anterior": 57.065,
+     "pct_anio_anterior": 55.6
+    },
+    {
+     "codigo": "otros_corrientes",
+     "etiqueta": "III. OTROS INGRESOS CORRIENTES",
+     "efectivo": 15.034,
+     "presupuesto": 22.96,
+     "dif_presupuesto": -7.925,
+     "pct_presupuesto": -34.5,
+     "anio_anterior": 49.589,
+     "dif_anio_anterior": -34.554,
+     "pct_anio_anterior": -69.7
+    }
+   ]
+  }
+ },
+ "mensual": {
+  "pagina": 3,
+  "nota": "Nota: Cifras preliminares",
+  "meses": [
+   {
+    "mes": 1,
+    "efectivo": 616.151,
+    "documentos_fiscales": 14.343,
+    "total": 630.494
+   },
+   {
+    "mes": 2,
+    "efectivo": 503.895,
+    "documentos_fiscales": 20.471,
+    "total": 524.366
+   },
+   {
+    "mes": 3,
+    "efectivo": 817.179,
+    "documentos_fiscales": 22.839,
+    "total": 840.018
+   },
+   {
+    "mes": 4,
+    "efectivo": 622.86,
+    "documentos_fiscales": 17.468,
+    "total": 640.328
+   }
+  ],
+  "total_acumulado": {
+   "efectivo": 2560.085,
+   "documentos_fiscales": 75.121,
+   "total": 2635.206
+  }
+ },
+ "condicion_por_mes": {
+  "1": "preliminar",
+  "2": "preliminar",
+  "3": "preliminar",
+  "4": "preliminar"
+ },
+ "documentos_fiscales": {
+  "pagina": 3,
+  "unidad_original": "balboas",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "creditos_fiscales": 16.116316,
+    "certificados": 1.351208,
+    "total_mes": 17.467524,
+    "mes_anio_anterior": 13.496198,
+    "acumulado": 75.121005,
+    "acumulado_anio_anterior": 52.148014
+   },
+   {
+    "etiqueta": "INGRESOS TRIBUTARIOS",
+    "creditos_fiscales": 16.116316,
+    "certificados": 1.351208,
+    "total_mes": 17.467524,
+    "mes_anio_anterior": 13.495973,
+    "acumulado": 75.12048,
+    "acumulado_anio_anterior": 52.147489
+   },
+   {
+    "etiqueta": "IMPUESTOS DIRECTOS",
+    "creditos_fiscales": 0.0021,
+    "certificados": 0.762624,
+    "total_mes": 0.764724,
+    "mes_anio_anterior": 0.219564,
+    "acumulado": 10.940745,
+    "acumulado_anio_anterior": 6.861576
+   },
+   {
+    "etiqueta": "Renta Natural",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": null,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "Renta Jurídica y Zona Libre",
+    "creditos_fiscales": 0.0004,
+    "certificados": 0.704127,
+    "total_mes": 0.704527,
+    "mes_anio_anterior": 0.190796,
+    "acumulado": 8.044861,
+    "acumulado_anio_anterior": 6.441121
+   },
+   {
+    "etiqueta": "Dividendos y Complementarios",
+    "creditos_fiscales": 0.0017,
+    "certificados": null,
+    "total_mes": 0.0017,
+    "mes_anio_anterior": null,
+    "acumulado": 0.685558,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "Inmueble",
+    "creditos_fiscales": null,
+    "certificados": 0.008925,
+    "total_mes": 0.008925,
+    "mes_anio_anterior": 0.028769,
+    "acumulado": 1.458845,
+    "acumulado_anio_anterior": 0.049451
+   },
+   {
+    "etiqueta": "Aviso de Operación de Empresas",
+    "creditos_fiscales": null,
+    "certificados": 0.049572,
+    "total_mes": 0.049572,
+    "mes_anio_anterior": null,
+    "acumulado": 0.751481,
+    "acumulado_anio_anterior": 0.371003
+   },
+   {
+    "etiqueta": "Otros",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": null,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "IMPUESTOS INDIRECTOS",
+    "creditos_fiscales": 16.114216,
+    "certificados": 0.588584,
+    "total_mes": 16.7028,
+    "mes_anio_anterior": 13.276408,
+    "acumulado": 64.179735,
+    "acumulado_anio_anterior": 45.285913
+   },
+   {
+    "etiqueta": "I.T.B.M.S. - Importación",
+    "creditos_fiscales": null,
+    "certificados": 0.139288,
+    "total_mes": 0.139288,
+    "mes_anio_anterior": 0.042996,
+    "acumulado": 0.551338,
+    "acumulado_anio_anterior": 0.159451
+   },
+   {
+    "etiqueta": "I.T.B.M.S. - Ventas",
+    "creditos_fiscales": null,
+    "certificados": 0.132374,
+    "total_mes": 0.132374,
+    "mes_anio_anterior": 0.000607,
+    "acumulado": 1.945678,
+    "acumulado_anio_anterior": 0.191561
+   },
+   {
+    "etiqueta": "Importación",
+    "creditos_fiscales": null,
+    "certificados": 0.316923,
+    "total_mes": 0.316923,
+    "mes_anio_anterior": 0.024081,
+    "acumulado": 1.132776,
+    "acumulado_anio_anterior": 0.152902
+   },
+   {
+    "etiqueta": "Primas de Seguros",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": null,
+    "acumulado": 0.0,
+    "acumulado_anio_anterior": 0.257858
+   },
+   {
+    "etiqueta": "Consumo de Gasolina (Gas Licuado)",
+    "creditos_fiscales": 16.114216,
+    "certificados": null,
+    "total_mes": 16.114216,
+    "mes_anio_anterior": 13.208725,
+    "acumulado": 59.470467,
+    "acumulado_anio_anterior": 44.524141
+   },
+   {
+    "etiqueta": "I.S.C. - Cerveza",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": null,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "I.S.C. - Gaseosa",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": null,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "Declaración Timbres",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": 0.0,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "Banco y Casas de Cambio",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": 0.0,
+    "acumulado": 1.079476,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "INGRESOS NO TRIBUTARIOS",
+    "creditos_fiscales": 0.0,
+    "certificados": 0.0,
+    "total_mes": 0.0,
+    "mes_anio_anterior": 0.000225,
+    "acumulado": 0.000525,
+    "acumulado_anio_anterior": 0.000525
+   },
+   {
+    "etiqueta": "Tasa Unica, S.A.",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": 0.000225,
+    "acumulado": 0.000525,
+    "acumulado_anio_anterior": 0.000525
+   },
+   {
+    "etiqueta": "Regalía de Recursos Minerales Metálicos",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": null,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   },
+   {
+    "etiqueta": "Otros Ingresos Varios",
+    "creditos_fiscales": null,
+    "certificados": null,
+    "total_mes": 0.0,
+    "mes_anio_anterior": 0.0,
+    "acumulado": null,
+    "acumulado_anio_anterior": null
+   }
+  ]
+ },
+ "texto_resumen_corrientes_mes": 622.9,
+ "edicion": "2025-04_preliminar",
+ "validaciones": [
+  {
+   "regla": "cuadro presente",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "cuadro presente",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "cuadro presente",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "cuadro presente",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "cuadro presente",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "cuadro presente",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "total_corrientes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.efectivo: 622.861 vs suma 622.861 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "total_corrientes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.presupuesto: 646.640 vs suma 646.640 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "total_corrientes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.anio_anterior: 494.429 vs suma 494.429 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.efectivo: 477.495 vs suma 477.495 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.presupuesto: 420.569 vs suma 420.568 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.anio_anterior: 374.614 vs suma 374.613 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.efectivo: 142.799 vs suma 142.798 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.presupuesto: 219.207 vs suma 219.207 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo.anio_anterior: 88.286 vs suma 88.286 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "columnas de diferencia coherentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_mes_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "total_corrientes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.efectivo: 2560.085 vs suma 2560.085 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "total_corrientes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.presupuesto: 2741.153 vs suma 2741.153 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "total_corrientes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.anio_anterior: 2238.105 vs suma 2238.106 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.efectivo: 2017.757 vs suma 2017.756 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.presupuesto: 1953.655 vs suma 1953.655 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.anio_anterior: 1775.565 vs suma 1775.564 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.efectivo: 527.294 vs suma 527.295 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.presupuesto: 764.538 vs suma 764.538 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo.anio_anterior: 412.952 vs suma 412.952 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "columnas de diferencia coherentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "resumen_acumulado_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.efectivo: 477.495 vs suma 477.495 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.presupuesto: 420.569 vs suma 420.568 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.anio_anterior: 374.614 vs suma 374.613 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "directos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.efectivo: 286.388 vs suma 286.388 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "directos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.presupuesto: 210.190 vs suma 210.190 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "directos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.anio_anterior: 169.587 vs suma 169.587 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "renta = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.efectivo: 225.502 vs suma 225.501 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "renta = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.presupuesto: 168.477 vs suma 168.477 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "renta = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.anio_anterior: 124.771 vs suma 124.771 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "indirectos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.efectivo: 191.107 vs suma 191.108 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "indirectos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.presupuesto: 210.378 vs suma 210.379 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "indirectos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo.anio_anterior: 205.026 vs suma 205.026 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "columnas de diferencia coherentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_mes_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.efectivo: 2017.757 vs suma 2017.756 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.presupuesto: 1953.655 vs suma 1953.655 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.anio_anterior: 1775.565 vs suma 1775.564 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "directos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.efectivo: 1209.166 vs suma 1209.166 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "directos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.presupuesto: 1098.008 vs suma 1098.008 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "directos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.anio_anterior: 947.702 vs suma 947.703 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "renta = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.efectivo: 984.506 vs suma 984.507 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "renta = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.presupuesto: 913.400 vs suma 913.400 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "renta = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.anio_anterior: 777.871 vs suma 777.872 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "indirectos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.efectivo: 808.590 vs suma 808.590 (dif -0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "indirectos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.presupuesto: 855.647 vs suma 855.648 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "indirectos = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo.anio_anterior: 827.862 vs suma 827.863 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "columnas de diferencia coherentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "tributarios_acumulado_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.efectivo: 142.799 vs suma 142.798 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.presupuesto: 219.207 vs suma 219.207 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.anio_anterior: 88.286 vs suma 88.286 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tasas_derechos_otros = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.efectivo: 96.682 vs suma 96.682 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tasas_derechos_otros = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.presupuesto: 188.011 vs suma 188.011 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tasas_derechos_otros = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.anio_anterior: 71.905 vs suma 71.905 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "utilidades_aportes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.efectivo: 46.116 vs suma 46.116 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "utilidades_aportes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.presupuesto: 31.196 vs suma 31.196 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "utilidades_aportes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo.anio_anterior: 16.381 vs suma 16.381 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "columnas de diferencia coherentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_mes_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.efectivo: 527.294 vs suma 527.295 (dif +0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.presupuesto: 764.538 vs suma 764.538 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "no_tributarios = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.anio_anterior: 412.952 vs suma 412.952 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tasas_derechos_otros = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.efectivo: 339.223 vs suma 339.223 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tasas_derechos_otros = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.presupuesto: 642.024 vs suma 642.024 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "tasas_derechos_otros = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.anio_anterior: 290.986 vs suma 290.985 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "utilidades_aportes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.efectivo: 188.072 vs suma 188.071 (dif -0.001)",
+   "celdas": []
+  },
+  {
+   "regla": "utilidades_aportes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.presupuesto: 122.514 vs suma 122.514 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "utilidades_aportes = suma de componentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo.anio_anterior: 121.966 vs suma 121.966 (dif +0.000)",
+   "celdas": []
+  },
+  {
+   "regla": "columnas de diferencia coherentes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "no_tributarios_acumulado_efectivo",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/tributarios/efectivo: 477.495 vs 477.495",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/tributarios/presupuesto: 420.569 vs 420.569",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/tributarios/anio_anterior: 374.614 vs 374.614",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/directos/efectivo: 286.388 vs 286.388",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/directos/presupuesto: 210.19 vs 210.19",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/directos/anio_anterior: 169.587 vs 169.587",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/indirectos/efectivo: 191.107 vs 191.107",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/indirectos/presupuesto: 210.378 vs 210.378",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/indirectos/anio_anterior: 205.026 vs 205.026",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/no_tributarios/efectivo: 142.799 vs 142.799",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/no_tributarios/presupuesto: 219.207 vs 219.207",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/no_tributarios/anio_anterior: 88.286 vs 88.286",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/tasas_derechos_otros/efectivo: 96.682 vs 96.682",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/tasas_derechos_otros/presupuesto: 188.011 vs 188.011",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/tasas_derechos_otros/anio_anterior: 71.905 vs 71.905",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/utilidades_aportes/efectivo: 46.116 vs 46.116",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/utilidades_aportes/presupuesto: 31.196 vs 31.196",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/utilidades_aportes/anio_anterior: 16.381 vs 16.381",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/otros_corrientes/efectivo: 2.567 vs 2.567",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/otros_corrientes/presupuesto: 6.864 vs 6.864",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes/efectivo/otros_corrientes/anio_anterior: 31.529 vs 31.529",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/tributarios/efectivo: 2017.757 vs 2017.757",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/tributarios/presupuesto: 1953.655 vs 1953.655",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/tributarios/anio_anterior: 1775.565 vs 1775.565",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/directos/efectivo: 1209.166 vs 1209.166",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/directos/presupuesto: 1098.008 vs 1098.008",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/directos/anio_anterior: 947.702 vs 947.702",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/indirectos/efectivo: 808.59 vs 808.59",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/indirectos/presupuesto: 855.647 vs 855.647",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/indirectos/anio_anterior: 827.862 vs 827.862",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/no_tributarios/efectivo: 527.294 vs 527.294",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/no_tributarios/presupuesto: 764.538 vs 764.538",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/no_tributarios/anio_anterior: 412.952 vs 412.952",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/tasas_derechos_otros/efectivo: 339.223 vs 339.223",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/tasas_derechos_otros/presupuesto: 642.024 vs 642.024",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/tasas_derechos_otros/anio_anterior: 290.986 vs 290.986",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/utilidades_aportes/efectivo: 188.072 vs 188.072",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/utilidades_aportes/presupuesto: 122.514 vs 122.514",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/utilidades_aportes/anio_anterior: 121.966 vs 121.966",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/otros_corrientes/efectivo: 15.034 vs 15.034",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/otros_corrientes/presupuesto: 22.96 vs 22.96",
+   "celdas": []
+  },
+  {
+   "regla": "resumen = detalle",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "acumulado/efectivo/otros_corrientes/anio_anterior: 49.589 vs 49.589",
+   "celdas": []
+  },
+  {
+   "regla": "cuadro mensual completo",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "meses [1, 2, 3, 4] para informe de mes 4",
+   "celdas": []
+  },
+  {
+   "regla": "efectivo + documentos = total (por mes)",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes 1: 616.151 + 14.343 vs 630.494",
+   "celdas": []
+  },
+  {
+   "regla": "efectivo + documentos = total (por mes)",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes 2: 503.895 + 20.471 vs 524.366",
+   "celdas": []
+  },
+  {
+   "regla": "efectivo + documentos = total (por mes)",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes 3: 817.179 + 22.839 vs 840.018",
+   "celdas": []
+  },
+  {
+   "regla": "efectivo + documentos = total (por mes)",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "mes 4: 622.86 + 17.468 vs 640.328",
+   "celdas": []
+  },
+  {
+   "regla": "suma de meses = acumulado",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "efectivo: suma 2560.085 vs total 2560.085",
+   "celdas": []
+  },
+  {
+   "regla": "suma de meses = acumulado",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "documentos_fiscales: suma 75.121 vs total 75.121",
+   "celdas": []
+  },
+  {
+   "regla": "suma de meses = acumulado",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "total: suma 2635.206 vs total 2635.206",
+   "celdas": []
+  },
+  {
+   "regla": "mes del cuadro mensual = cuadro del mes",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "622.86 vs 622.861",
+   "celdas": []
+  },
+  {
+   "regla": "acumulado del cuadro mensual = cuadro acumulado",
+   "ok": true,
+   "nivel": "error",
+   "detalle": "2560.085 vs 2560.085",
+   "celdas": []
+  },
+  {
+   "regla": "documentos fiscales del mes (B/.) = cuadro mensual",
+   "ok": true,
+   "nivel": "aviso",
+   "detalle": "17.467524 vs 17.468",
+   "celdas": []
+  },
+  {
+   "regla": "documentos fiscales acumulados (B/.) = cuadro mensual",
+   "ok": true,
+   "nivel": "aviso",
+   "detalle": "75.121005 vs 75.121",
+   "celdas": []
+  },
+  {
+   "regla": "créditos + certificados = total del mes (documentos)",
+   "ok": true,
+   "nivel": "aviso",
+   "detalle": "17.467524 vs 17.467524",
+   "celdas": []
+  },
+  {
+   "regla": "texto del resumen = cuadro",
+   "ok": true,
+   "nivel": "aviso",
+   "detalle": "texto dice 622.9 millones; el cuadro dice 622.861",
+   "celdas": []
+  }
+ ],
+ "errores": [],
+ "avisos": [],
+ "celdas_dudosas": [],
+ "publicable": true
+}

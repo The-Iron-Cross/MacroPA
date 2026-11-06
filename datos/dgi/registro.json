@@ -1,0 +1,340 @@
+{
+ "pdfs": {
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-ENE2024.pdf": {
+   "etiqueta": "ENERO",
+   "seccion": 2024,
+   "sha256": "d669d63be214a910367112e6d6179f37d4b36a566f8bc948ab560cdc7ef651e6",
+   "bytes": 1826971,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-01_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP2024-Feb.pdf": {
+   "etiqueta": "FEBRERO",
+   "seccion": 2024,
+   "sha256": "de6300e9b1c1ce8250e7378cc168a66b28e3d81027f9aaa0596c74c65062d060",
+   "bytes": 1683441,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-02_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IPF-Marzo24.pdf": {
+   "etiqueta": "MARZO",
+   "seccion": 2024,
+   "sha256": "81a86d0c5fcca5c12806673e346233a37b6ec1ac36f62abef878b1d2842a241f",
+   "bytes": 1885443,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-03_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Abr24.pdf": {
+   "etiqueta": "ABRIL",
+   "seccion": 2024,
+   "sha256": "18740b9b9166942f7bc441a3682a2211fb371c77743b702c32b8bbf10925cb37",
+   "bytes": 1892165,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-04_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-May24.pdf": {
+   "etiqueta": "MAYO",
+   "seccion": 2024,
+   "sha256": "07c6b76aba520a1dabee349ce1e9f8f91e650b3b4f6f2389c6ce5bf39f04cd85",
+   "bytes": 1882501,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-05_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Jun24.pdf": {
+   "etiqueta": "JUNIO",
+   "seccion": 2024,
+   "sha256": "2747fea0690aadc7ee40425c661c45291dc94861041b68abd8f9ef725c018954",
+   "bytes": 1898412,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-06_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Jul24.pdf": {
+   "etiqueta": "JULIO",
+   "seccion": 2024,
+   "sha256": "dd9b9b6eba582d01f1fb052314c657859de24646a21551d79cc3e607b9977e0d",
+   "bytes": 1904065,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-07_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Ago24.pdf": {
+   "etiqueta": "AGOSTO",
+   "seccion": 2024,
+   "sha256": "5143372e4c0838620f8f6ec43b85b22bfbc847b56d8bb6d4c61086875bbb980f",
+   "bytes": 1611316,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-08_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-sept24.pdf": {
+   "etiqueta": "SEPTIEMBRE",
+   "seccion": 2024,
+   "sha256": "cb9c5225284a1df140578e9e860b26059da2ec347fd6dc9d8417083a6ec84107",
+   "bytes": 1638116,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-09_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP2024Oct.pdf": {
+   "etiqueta": "OCTUBRE",
+   "seccion": 2024,
+   "sha256": "7cbbf96e23e172552b12029a44c19970ba477974bfd5cba618fb0f1cb2d6f8df",
+   "bytes": 1707164,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-10_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP2024NOV.pdf": {
+   "etiqueta": "NOVIEMBRE",
+   "seccion": 2024,
+   "sha256": "232e59381935548eb27b1665cf30d4cc9ca4a6de055b054840817ea4484f7d0b",
+   "bytes": 1649556,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-11_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Dic24.pdf": {
+   "etiqueta": "DICIEMBRE",
+   "seccion": 2024,
+   "sha256": "1aab880590e8c3c3112e75467328a7295fb3df93b17171177b82b27fb9e6fcba",
+   "bytes": 1647467,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-12_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/INFORME%20OFICIAL%202024.pdf": {
+   "etiqueta": "Informe Oficial de Recaudación diciembre 2024",
+   "seccion": 2024,
+   "sha256": "9080ee5db20e5e6bf95331c8146edcc9d3971eed2dba5da295ab958135192fa1",
+   "bytes": 1427108,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2024-12_oficial",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Ene25.pdf": {
+   "etiqueta": "ENERO",
+   "seccion": 2025,
+   "sha256": "3979c6870d221a225dfac87ee646086f67292e42b83bdc4e6dc7647b2d72b733",
+   "bytes": 1502231,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-01_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Feb25.pdf": {
+   "etiqueta": "FEBRERO",
+   "seccion": 2025,
+   "sha256": "0a5db15d9810c59cfc898d543bfff9832bf037feb8e385505093ea7eb7db254c",
+   "bytes": 1540335,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-02_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/INFORME%20PRELIMINAR-Mar25.pdf": {
+   "etiqueta": "MARZO",
+   "seccion": 2025,
+   "sha256": "3130119dd1b096423e6490ba19352bacbe077aaa86d8f0239a2656d2651f3436",
+   "bytes": 1469663,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-03_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/INFORME%20PRELIMINAR-abr25.pdf": {
+   "etiqueta": "ABRIL",
+   "seccion": 2025,
+   "sha256": "581a5b5807b48d2d556a10a51cf3b6b8768b491043f2ca07c3f5836c95a1db52",
+   "bytes": 1532106,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-04_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-May25.pdf": {
+   "etiqueta": "MAYO",
+   "seccion": 2025,
+   "sha256": "08d3e40b9bed8d7fff6d6be7b2ba2c961b873e4f64ee4e0ab262c0485430fc3d",
+   "bytes": 1405969,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-05_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-JUN25.pdf": {
+   "etiqueta": "JUNIO",
+   "seccion": 2025,
+   "sha256": "be54968ff98e3b29b8b4a337df21f6ebbef6e829ce80b88aceb38b7047631c5f",
+   "bytes": 1524142,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-06_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Jul25.pdf": {
+   "etiqueta": "JULIO",
+   "seccion": 2025,
+   "sha256": "af2f9974da7fa187df1e077c198653e7b2b5e960004688a975f3eb4beb4be4a2",
+   "bytes": 1541083,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-07_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Ago25.pdf": {
+   "etiqueta": "AGOSTO",
+   "seccion": 2025,
+   "sha256": "3830e8c5099463d142df248ef30ade4304f9ec2c489fd045efdc311f7afadcd1",
+   "bytes": 1557995,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-08_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-sept25.pdf": {
+   "etiqueta": "SEPTIEMBRE",
+   "seccion": 2025,
+   "sha256": "14ea303d735b86f07f677f8de9a2d088f350c9548ebd3dbcb11fcf958c5c9efb",
+   "bytes": 1581596,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-09_preliminar",
+   "publicable": true,
+   "errores": [],
+   "nota": "mismo PDF que otro enlace"
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-2025Oct.pdf": {
+   "etiqueta": "OCTUBRE",
+   "seccion": 2025,
+   "sha256": "3ecc2ec3ef5550e5e709d86ce394dfdc418106ef7244d45cf2ce095dbe675a19",
+   "bytes": 1528567,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-10_preliminar",
+   "publicable": true,
+   "errores": [],
+   "nota": "mismo PDF que otro enlace"
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Nov25.pdf": {
+   "etiqueta": "NOVIEMBRE",
+   "seccion": 2025,
+   "sha256": "dfb98ba548749d4f93cb675db809be33f620ba86c5a0e598bcca4d77818dc65f",
+   "bytes": 1530891,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-11_preliminar",
+   "publicable": true,
+   "errores": [],
+   "nota": "mismo PDF que otro enlace"
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Dic25.pdf": {
+   "etiqueta": "DICIEMBRE",
+   "seccion": 2025,
+   "sha256": "69420acf1067682c5d20be8cc0ce036a1a15408b449dd0f89157c0d7f28f8875",
+   "bytes": 1646866,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2025-12_preliminar",
+   "publicable": true,
+   "errores": [],
+   "nota": "mismo PDF que otro enlace"
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Ene26.pdf": {
+   "etiqueta": "ENERO",
+   "seccion": 2026,
+   "sha256": "618f0a7981a92aad2c393288f83e1e6a7d68328b8bc52d9133ac5d3190e65363",
+   "bytes": 1229663,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-01_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-feb26.pdf": {
+   "etiqueta": "FEBRERO",
+   "seccion": 2026,
+   "sha256": "3915a1b665ef2b8d763ae04542817d1dfe02e7b7b9112cf423500aecf039adda",
+   "bytes": 1436257,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-02_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Mar26.pdf": {
+   "etiqueta": "MARZO",
+   "seccion": 2026,
+   "sha256": "b62dd45867bac0a18699505e83d9792f71fbef271a40ac2d06cf8c61df2fe1b0",
+   "bytes": 1163441,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-03_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-abr26.pdf": {
+   "etiqueta": "ABRIL",
+   "seccion": 2026,
+   "sha256": "b770f58710338e32a5741ead18e9ec9c4cda7d27768171cae13a01f22331a655",
+   "bytes": 1169270,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-04_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-May26.pdf": {
+   "etiqueta": "MAYO",
+   "seccion": 2026,
+   "sha256": "4f2f73ba81fbe39bec9ec227ed3263b75255caeefaaf32044dc13170c60fe757",
+   "bytes": 1352970,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-05_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-JUN26.pdf": {
+   "etiqueta": "JUNIO",
+   "seccion": 2026,
+   "sha256": "8c2b35a9abd74a1d66ce1a22d4a40546aaac223e197693d1d0bb2c1b1dace6a2",
+   "bytes": 1371901,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-06_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Jul26.pdf": {
+   "etiqueta": "JULIO",
+   "seccion": 2026,
+   "sha256": "8fad20401069f814befbb0c4fd47479136bf3440482efbf468d076b59b50b05a",
+   "bytes": 770364,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-07_preliminar",
+   "publicable": true,
+   "errores": []
+  },
+  "https://dgi.mef.gob.pa/Transparencia/IFP/IFP-Ago26.pdf": {
+   "etiqueta": "AGOSTO",
+   "seccion": 2026,
+   "sha256": "b22a7ce5d426386470311d525e1c9c664e6df18a2073fd1501afa54a094be481",
+   "bytes": 748461,
+   "revisado": "2026-11-06T18:33:11Z",
+   "edicion": "2026-08_preliminar",
+   "publicable": true,
+   "errores": []
+  }
+ },
+ "ultima_revision": "2026-11-06T18:33:11Z",
+ "corrida": []
+}

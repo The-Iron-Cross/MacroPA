@@ -1,0 +1,57 @@
+name: Actualizar recaudación (DGI)
+
+on:
+  schedule:
+    - cron: "30 13 * * *"   # todos los días, 8:30 a. m. hora de Panamá
+  workflow_dispatch:
+    inputs:
+      todos:
+        description: "Volver a procesar todos los PDF aunque no hayan cambiado"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dgi-recaudacion
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lector de PDF
+        run: pip install pdfplumber==0.11.10
+      - name: Revisar la página de la DGI y procesar informes nuevos
+        working-directory: herramientas
+        run: |
+          if [ "${{ inputs.todos }}" = "true" ]; then MODO=--todos; else MODO=; fi
+          python3 dgi_recaudacion.py ../datos/dgi --desde 2024 $MODO | tee salida.txt
+          if grep -q '^ERROR' salida.txt; then
+            grep '^ERROR' salida.txt | while read -r l; do echo "::warning::$l"; done
+          fi
+          rm salida.txt
+      - name: Armar la serie y pasarla a index.html
+        run: |
+          python3 herramientas/serie_dgi.py datos/dgi/ediciones datos/dgi
+          python3 herramientas/embeber_dgi.py datos/dgi/resumen.json index.html
+      - name: Guardar cambios
+        run: |
+          git config user.name "MacroPA datos"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/dgi index.html
+          # registro.json cambia en cada corrida (fecha de revisión): solo se guarda
+          # si hay datos nuevos o si la corrida trae errores.
+          if ! git diff --cached --name-only | grep -qv '^datos/dgi/registro.json$' \
+             && ! grep -q '"error"' <(git diff --cached datos/dgi/registro.json); then
+            echo "Sin informes nuevos ni errores; no se guarda nada."
+          else
+            git commit -m "Recaudación DGI: actualización automática $(date -u +%F)"
+            git push
+          fi
