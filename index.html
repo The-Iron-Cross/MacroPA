@@ -436,21 +436,16 @@ const SECTIONS = {
    m("m-comb",state.mcomb); m("m-autos","autos"); m("m-con",state.mcon); m("m-cem",state.mcem); m("m-gen","gen"); m("m-mit","mitradel"); m("m-sa","sa");
  }},
  fiscal:{label:"Fiscal", render(){
-   const sp=wideRows(D.spnf,["ing","gas","int","prim","tot"]), l=last(sp), de=last(D.deuda), acp=last(D.acp);
-   return `<p class="lede">Ingresos, gastos, déficit y deuda del Sector Público No Financiero (SPNF), que incluye al Gobierno Central, la CSS y las empresas públicas.</p>
+   const sp=wideRows(D.spnf,["ing","gas","int","prim","tot"]), l=last(sp), acp=last(D.acp);
+   return `<p class="lede">Ingresos, gastos y déficit del Sector Público No Financiero (SPNF), que incluye al Gobierno Central, la CSS y las empresas públicas. La deuda pública está en su propia pestaña.</p>
    <div class="kpis">
     ${kpi("Déficit SPNF "+l[0], fmt(l[5])+"%", "del PIB", l[5]<0?"neg":"")}
-    ${kpi("Deuda pública "+de[0], fmt(de[2])+"%", "del PIB · $"+fmt(de[1]/1000,1)+" mil M")}
+    ${kpi("Ingresos SPNF "+l[0], fmt(l[1])+"%", "del PIB")}
     ${kpi("Intereses "+l[0], fmt(l[3])+"%", "del PIB")}
     ${kpi("Aporte del Canal "+acp[0], "B/."+fmt(acp[1],0)+" M", fmt(acp[2])+"% del PIB")}
    </div>
    ${card("c-bal","Balance fiscal del SPNF","% del PIB. Primario = sin contar intereses.","Fuente: MEF vía MINERPA.")}
    ${card("c-ig","Ingresos y gastos del SPNF","% del PIB","Fuente: MEF vía MINERPA.")}
-   ${card("c-deuda","Deuda pública bruta","% del PIB","Fuente: MEF vía MINERPA.")}
-   ${card("c-dcomp","Deuda interna y externa","Millones de dólares","Fuente: MEF vía MINERPA.")}
-   ${DMEF?card("c-dmes","Deuda pública mes a mes","Millones de dólares, saldo a fin de mes. Total = externa + interna.","Fuente: MEF, Dirección de Financiamiento Público (Base de Datos). Incluye Gobierno Central e instituciones descentralizadas. Último corte: "+last(DMEF.xl)+"."):""}
-   ${DMEF?card("c-cpp","Costo promedio ponderado de la deuda","% anual, calculado por el MEF","Fuente: MEF, Dirección de Financiamiento Público. Los meses sin dato no se publicaron o el MEF los publicó con errores; no se rellenan."):""}
-   ${DMEF?card("c-flujo","Desembolsos, amortizaciones e intereses","Millones de dólares por mes, últimos 12 meses","Fuente: MEF, Dirección de Financiamiento Público. Intereses pagados según el MEF (no se estiman)."):""}
    ${DGI?dgiRender():""}
    ${card("c-trib","Recaudación de impuestos","% del PIB","Fuente: MEF/DGI vía MINERPA. Último dato publicado: "+last(D.impuestos.years)+".")}
    ${card("c-acp","Aportes del Canal al Tesoro","Millones de balboas","Fuente: Autoridad del Canal de Panamá vía MINERPA.")}`;
@@ -458,6 +453,27 @@ const SECTIONS = {
    const sp=wideRows(D.spnf,["prim","tot","ing","gas"]);
    chart(q("#c-bal"),{type:"bar",x:col(sp,0),series:[{name:"Primario",vals:col(sp,1),color:"--teal"},{name:"Total",vals:col(sp,2),color:"--red"}],unit:"%"});
    chart(q("#c-ig"),{type:"line",x:col(sp,0),series:[{name:"Ingresos",vals:col(sp,3),color:"--blue"},{name:"Gastos",vals:col(sp,4),color:"--red"}],unit:"%"});
+   const im=wideRows(D.impuestos,["tot","renta","consumo","selectivos"]);
+   if(DGI) dgiDraw();
+   chart(q("#c-trib"),{type:"line",x:col(im,0),series:[{name:"Total",vals:col(im,1),color:"--blue"},{name:"Renta",vals:col(im,2),color:"--teal"},{name:"ITBMS",vals:col(im,3),color:"--amber"}],unit:"%",zero:true});
+   chart(q("#c-acp"),{type:"bar",x:col(D.acp,0).map(String),series:[{vals:col(D.acp,1),color:"--blue"}],dec:0});
+ }},
+ deuda:{label:"Deuda", render(){
+   const de=last(D.deuda), T=DMEF, n=T?T.p.length-1:-1, ic=T?(()=>{for(let i=n;i>=0;i--) if(T.cpp[i]!=null) return i; return -1;})():-1;
+   return `<p class="lede">Deuda pública de Panamá. Las cifras anuales (% del PIB) vienen del MEF vía MINERPA; las mensuales, de la Dirección de Financiamiento Público del MEF e incluyen al Gobierno Central y las instituciones descentralizadas. El saldo de diciembre de la serie mensual coincide con el dato anual.</p>
+   <div class="kpis">
+    ${kpi("Deuda pública "+de[0], fmt(de[2])+"%", "del PIB · $"+fmt(de[1]/1000,1)+" mil M")}
+    ${T?kpi("Saldo a "+T.xl[n], "$"+fmt(T.tot[n]/1000,1)+" mil M", "fin de mes, total"):""}
+    ${T?kpi("Deuda externa", fmt(100*T.ext[n]/T.tot[n],0)+"%", "del saldo a "+T.xl[n]):""}
+    ${T&&ic>=0?kpi("Costo promedio", fmt(T.cpp[ic],2)+"%", "anual, a "+T.xl[ic]):""}
+   </div>
+   ${DMEF?card("c-dmes","Deuda pública mes a mes","Millones de dólares, saldo a fin de mes. Total = externa + interna.","Fuente: MEF, Dirección de Financiamiento Público (Base de Datos). Incluye Gobierno Central e instituciones descentralizadas. Último corte: "+last(DMEF.xl)+"."):""}
+   ${DMEF?card("c-cpp","Costo promedio ponderado de la deuda","% anual, calculado por el MEF","Fuente: MEF, Dirección de Financiamiento Público. Los meses sin dato no se publicaron o el MEF los publicó con errores; no se rellenan."):""}
+   ${DMEF?card("c-flujo","Desembolsos, amortizaciones e intereses","Millones de dólares por mes, últimos 12 meses","Fuente: MEF, Dirección de Financiamiento Público. Intereses pagados según el MEF (no se estiman)."):""}
+   ${card("c-deuda","Deuda pública bruta","% del PIB","Fuente: MEF vía MINERPA.")}
+   ${card("c-dcomp","Deuda interna y externa","Millones de dólares","Fuente: MEF vía MINERPA.")}
+   `;
+ }, draw(){
    chart(q("#c-deuda"),{type:"line",x:col(D.deuda,0).map(String),series:[{vals:col(D.deuda,2)}],unit:"%"});
    const dc=fromYear(D.deuda_comp,2000);
    if(DMEF){ const T=DMEF, f=T.p.findIndex(p=>p>="2016-07"), sl=(a,i)=>a.slice(i);
@@ -466,10 +482,6 @@ const SECTIONS = {
     const k=T.p.length-12;
     chart(q("#c-flujo"),{type:"bar",x:sl(T.x,k),xl:sl(T.xl,k),series:[{name:"Desembolsos",vals:sl(T.des,k),color:"--teal"},{name:"Amortización",vals:sl(T.amo,k),color:"--red"},{name:"Intereses",vals:sl(T.intr,k),color:"--amber"}],dec:1,monthly:true}); }
    chart(q("#c-dcomp"),{type:"line",x:col(dc,0).map(String),series:[{name:"Externa",vals:col(dc,2),color:"--blue"},{name:"Interna",vals:col(dc,1),color:"--amber"}],dec:0,zero:true});
-   const im=wideRows(D.impuestos,["tot","renta","consumo","selectivos"]);
-   if(DGI) dgiDraw();
-   chart(q("#c-trib"),{type:"line",x:col(im,0),series:[{name:"Total",vals:col(im,1),color:"--blue"},{name:"Renta",vals:col(im,2),color:"--teal"},{name:"ITBMS",vals:col(im,3),color:"--amber"}],unit:"%",zero:true});
-   chart(q("#c-acp"),{type:"bar",x:col(D.acp,0).map(String),series:[{vals:col(D.acp,1),color:"--blue"}],dec:0});
  }},
  presupuesto:{label:"Presupuesto", render(){
    const Y=M.years, ly=last(Y), t=M.tot[ly], tp=M.tot[ly-1], pe=t[2]/t[1]*100, pep=tp[2]/tp[1]*100;
