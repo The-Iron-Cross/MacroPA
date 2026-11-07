@@ -1,0 +1,74 @@
+name: Validar y publicar el sitio
+
+# Publica MacroPA en GitHub Pages SOLO si la validación de datos aprueba.
+# Si la validación encuentra errores, no se publica nada y el sitio sigue mostrando
+# la última versión válida. Corre:
+#  - en cada cambio a la rama main (por ejemplo, una edición hecha a mano en GitHub),
+#  - al final de los flujos automáticos de deuda y recaudación, cuando guardan datos nuevos,
+#  - a mano, desde la pestaña Actions ("Run workflow").
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publicar-sitio
+  cancel-in-progress: false
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main          # siempre la última versión guardada (también cuando lo llama otro flujo)
+          fetch-depth: 2
+      - name: Validar los datos de index.html
+        run: |
+          # Compara con el commit anterior. En ediciones hechas a mano, quitar una cifra
+          # puede ser intencional: se avisa pero no bloquea. Los errores de consistencia sí bloquean.
+          if git rev-parse -q --verify HEAD~1 >/dev/null; then
+            git show HEAD~1:index.html > "$RUNNER_TEMP/anterior.html"
+            BASE="--base $RUNNER_TEMP/anterior.html"
+          else BASE=; fi
+          node herramientas/validar_macropa.js index.html $BASE --borrados aviso \
+            --informe "$RUNNER_TEMP/validacion.json" --resumen "$RUNNER_TEMP/validacion.md"
+      - name: Resumen de la validación
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/validacion.md" ]; then cat "$RUNNER_TEMP/validacion.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ "${{ job.status }}" != "success" ]; then
+            echo "**No se publicó.** El sitio sigue mostrando la última versión que pasó la validación." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Guardar el informe de validación
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validacion-publicacion
+          path: ${{ runner.temp }}/validacion.json
+          if-no-files-found: ignore
+          retention-days: 90
+      - name: Preparar el sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  publicar:
+    needs: validar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
+        id: despliegue
+        uses: actions/deploy-pages@v4

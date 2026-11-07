@@ -1,5 +1,14 @@
 name: Actualizar deuda pública (MEF)
 
+# Reglas:
+# 1. Si la validación aprueba y hay datos nuevos: se guardan y se publica el sitio.
+# 2. Si la validación encuentra errores: no se guarda ni se publica nada; la ejecución
+#    queda en rojo y el motivo aparece en su resumen.
+# 3. Los valores atípicos se anotan en el resumen pero no bloquean.
+# 4. Si la descarga falla o viene incompleta: no se reemplaza ninguna cifra existente
+#    por ceros, vacíos o datos faltantes (la validación lo bloquea).
+# 5. Si no hay datos nuevos: no se hace commit.
+
 on:
   schedule:
     - cron: "0 13 * * *"   # todos los días, 8:00 a. m. hora de Panamá
@@ -14,21 +23,24 @@ permissions:
   contents: write
 
 concurrency:
-  group: deuda-mef
+  group: datos-macropa       # deuda y recaudación nunca guardan al mismo tiempo
   cancel-in-progress: false
 
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      publicar: ${{ steps.guardar.outputs.publicar }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Descargar y validar
+      - name: Descargar y validar cada mes
         working-directory: herramientas
         run: |
+          set -o pipefail
           if [ "${{ inputs.completo }}" = "true" ]; then MODO=--completo; else MODO=; fi
           python3 deuda_mef.py ../datos/deuda $MODO | tee salida.txt
           if grep -q '^ERROR' salida.txt; then
@@ -37,15 +49,53 @@ jobs:
           rm salida.txt
       - name: Pasar el resumen a index.html
         run: python3 herramientas/embeber_deuda.py datos/deuda/resumen.json index.html
+      - name: Validar la página completa antes de guardar
+        run: |
+          git show HEAD:index.html > "$RUNNER_TEMP/anterior.html"
+          node herramientas/validar_macropa.js index.html --base "$RUNNER_TEMP/anterior.html" \
+            --informe "$RUNNER_TEMP/validacion.json" --resumen "$RUNNER_TEMP/validacion.md"
       - name: Guardar cambios
+        id: guardar
         run: |
           git config user.name "MacroPA datos"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add datos/deuda index.html
           if ! git diff --cached --name-only | grep -qv '^datos/deuda/registro.json$' \
              && ! grep -q '"error"' <(git diff --cached datos/deuda/registro.json); then
-            echo "Sin datos nuevos ni errores; no se guarda nada."
-          else
-            git commit -m "Deuda MEF: actualización automática $(date -u +%F)"
-            git push
+            echo "Sin datos nuevos ni errores; no se guarda nada." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "publicar=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          if git diff --cached --name-only | grep -q '^index.html$'; then PUB=true; else PUB=false; fi
+          node herramientas/historial.js "$RUNNER_TEMP/validacion.json" "Deuda MEF" \
+            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            datos/auditoria/historial_actualizaciones.md "$RUNNER_TEMP/mensaje.txt"
+          git add datos/auditoria/historial_actualizaciones.md
+          git commit -F "$RUNNER_TEMP/mensaje.txt"
+          git push
+          echo "Datos guardados (commit $(git rev-parse --short HEAD))." >> "$GITHUB_STEP_SUMMARY"
+          echo "publicar=$PUB" >> "$GITHUB_OUTPUT"
+      - name: Resumen de la ejecución
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/validacion.md" ]; then cat "$RUNNER_TEMP/validacion.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ "${{ job.status }}" != "success" ]; then
+            echo "**No se guardó ni se publicó nada.** Se conserva la última versión válida de los datos y del sitio. Revise el paso en rojo para ver el motivo." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Guardar el informe de validación
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validacion-deuda
+          path: ${{ runner.temp }}/validacion.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  publicar:
+    needs: actualizar
+    if: needs.actualizar.outputs.publicar == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/publicar.yml

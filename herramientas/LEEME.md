@@ -18,3 +18,11 @@
 - `originales/`: el XML exportado tal cual por el MEF.
 
 `python3 embeber_deuda.py ../datos/deuda/resumen.json ../index.html` copia el resumen dentro de la página (constante `DMEF`). Ambos pasos los corre todos los días el flujo `.github/workflows/deuda-mef.yml`.
+
+## Validación automática antes de guardar y publicar
+
+`node validar_macropa.js ../index.html --base anterior.html` revisa los datos de la página sin abrir un navegador: ejecuta las mismas reglas que se ven con `?validar` (identidades contables, duplicados, orden, unidades) y, con `--base`, compara contra la versión anterior para impedir que una cifra publicada sea reemplazada por un cero, un vacío o un período faltante. Sale con código 1 si hay errores; los atípicos se informan pero no bloquean.
+
+- Los flujos de deuda y recaudación la corren después de descargar. Si falla, no se guarda ni se publica nada y la ejecución queda en rojo con el motivo en su resumen.
+- Si aprueba y hay datos nuevos, `historial.js` agrega una fila a `datos/auditoria/historial_actualizaciones.md` (qué series y períodos cambiaron, atípicos y enlace a la ejecución) y arma el mensaje del commit. Sin datos nuevos no hay commit.
+- `.github/workflows/publicar.yml` publica el sitio en GitHub Pages solo si la validación aprueba; corre en cada cambio a `main`, al final de los flujos de datos y a mano. Requiere que en Settings → Pages la fuente sea "GitHub Actions".

@@ -1,5 +1,14 @@
 name: Actualizar recaudación (DGI)
 
+# Reglas:
+# 1. Si la validación aprueba y hay datos nuevos: se guardan y se publica el sitio.
+# 2. Si la validación encuentra errores: no se guarda ni se publica nada; la ejecución
+#    queda en rojo y el motivo aparece en su resumen.
+# 3. Los valores atípicos se anotan en el resumen pero no bloquean.
+# 4. Si la descarga falla o viene incompleta: no se reemplaza ninguna cifra existente
+#    por ceros, vacíos o datos faltantes (la validación lo bloquea).
+# 5. Si no hay datos nuevos: no se hace commit.
+
 on:
   schedule:
     - cron: "30 13 * * *"   # todos los días, 8:30 a. m. hora de Panamá
@@ -14,13 +23,15 @@ permissions:
   contents: write
 
 concurrency:
-  group: dgi-recaudacion
+  group: datos-macropa       # deuda y recaudación nunca guardan al mismo tiempo
   cancel-in-progress: false
 
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    outputs:
+      publicar: ${{ steps.guardar.outputs.publicar }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,6 +42,7 @@ jobs:
       - name: Revisar la página de la DGI y procesar informes nuevos
         working-directory: herramientas
         run: |
+          set -o pipefail
           if [ "${{ inputs.todos }}" = "true" ]; then MODO=--todos; else MODO=; fi
           python3 dgi_recaudacion.py ../datos/dgi --desde 2024 $MODO | tee salida.txt
           if grep -q '^ERROR' salida.txt; then
@@ -41,17 +53,55 @@ jobs:
         run: |
           python3 herramientas/serie_dgi.py datos/dgi/ediciones datos/dgi
           python3 herramientas/embeber_dgi.py datos/dgi/resumen.json index.html
+      - name: Validar la página completa antes de guardar
+        run: |
+          git show HEAD:index.html > "$RUNNER_TEMP/anterior.html"
+          node herramientas/validar_macropa.js index.html --base "$RUNNER_TEMP/anterior.html" \
+            --informe "$RUNNER_TEMP/validacion.json" --resumen "$RUNNER_TEMP/validacion.md"
       - name: Guardar cambios
+        id: guardar
         run: |
           git config user.name "MacroPA datos"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add datos/dgi index.html
-          # registro.json cambia en cada corrida (fecha de revisión): solo se guarda
-          # si hay datos nuevos o si la corrida trae errores.
           if ! git diff --cached --name-only | grep -qv '^datos/dgi/registro.json$' \
              && ! grep -q '"error"' <(git diff --cached datos/dgi/registro.json); then
-            echo "Sin informes nuevos ni errores; no se guarda nada."
-          else
-            git commit -m "Recaudación DGI: actualización automática $(date -u +%F)"
-            git push
+            # registro.json cambia en cada corrida (fecha de revisión): solo se guarda
+            # si hay datos nuevos o si la corrida trae errores.
+            echo "Sin informes nuevos ni errores; no se guarda nada." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "publicar=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          if git diff --cached --name-only | grep -q '^index.html$'; then PUB=true; else PUB=false; fi
+          node herramientas/historial.js "$RUNNER_TEMP/validacion.json" "Recaudación DGI" \
+            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            datos/auditoria/historial_actualizaciones.md "$RUNNER_TEMP/mensaje.txt"
+          git add datos/auditoria/historial_actualizaciones.md
+          git commit -F "$RUNNER_TEMP/mensaje.txt"
+          git push
+          echo "Datos guardados (commit $(git rev-parse --short HEAD))." >> "$GITHUB_STEP_SUMMARY"
+          echo "publicar=$PUB" >> "$GITHUB_OUTPUT"
+      - name: Resumen de la ejecución
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/validacion.md" ]; then cat "$RUNNER_TEMP/validacion.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ "${{ job.status }}" != "success" ]; then
+            echo "**No se guardó ni se publicó nada.** Se conserva la última versión válida de los datos y del sitio. Revise el paso en rojo para ver el motivo." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Guardar el informe de validación
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validacion-recaudacion
+          path: ${{ runner.temp }}/validacion.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  publicar:
+    needs: actualizar
+    if: needs.actualizar.outputs.publicar == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/publicar.yml
