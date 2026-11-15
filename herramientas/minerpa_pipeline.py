@@ -10,6 +10,7 @@ from __future__ import annotations
 import datetime as dt
 import hashlib
 import html
+import http.cookiejar
 import json
 import re
 import time
@@ -19,7 +20,8 @@ import urllib.parse
 import urllib.request
 
 BASE = "https://minerpa.com.pa"
-UA = "MacroPA-datos/2.0 (+https://the-iron-cross.github.io/MacroPA/)"
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36 MacroPA-datos/2.0"
+OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
 # Las cuatro series se mantienen fuera de la actualización MINERPA porque MacroPA
 # las complementa con publicaciones directas más recientes del INEC.
@@ -86,12 +88,20 @@ def _normalizar(s):
     return re.sub(r"\s+", " ", "".join(c for c in s if not unicodedata.combining(c))).strip().lower()
 
 
-def _get(url, data=None, intentos=4):
+def _get(url, data=None, intentos=4, referer=None):
     ultimo = None
     for intento in range(intentos):
         try:
-            req = urllib.request.Request(url, data=data, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=90) as r:
+            headers = {"User-Agent": UA, "Accept": "application/json,text/html;q=0.9,*/*;q=0.8"}
+            if data is not None:
+                headers.update({
+                    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "Origin": BASE,
+                    "Referer": referer or BASE + "/",
+                    "X-Requested-With": "XMLHttpRequest",
+                })
+            req = urllib.request.Request(url, data=data, headers=headers)
+            with OPENER.open(req, timeout=90) as r:
                 tipo = r.headers.get_content_type()
                 crudo = r.read()
             if tipo not in {"text/html", "application/json", "text/plain"}:
@@ -104,9 +114,39 @@ def _get(url, data=None, intentos=4):
     raise ErrorMinerpa(f"no se pudo descargar {url}: {ultimo}")
 
 
+def _get_json(url, data, contexto, referer, intentos=4):
+    ultimo = None
+    for intento in range(intentos):
+        try:
+            texto = _get(url, data, intentos=2, referer=referer)
+            if not texto.strip():
+                raise ErrorMinerpa("respuesta vacía")
+            valor = json.loads(texto)
+            if not isinstance(valor, dict):
+                raise ErrorMinerpa("la respuesta JSON no es un objeto")
+            return valor
+        except (json.JSONDecodeError, ErrorMinerpa) as e:
+            ultimo = e
+            if intento + 1 < intentos:
+                time.sleep(2 ** intento)
+    raise ErrorMinerpa(f"{contexto}: respuesta inválida del endpoint de tablas: {ultimo}")
+
+
 def _fuente(pagina):
     m = re.search(r"Fuente\s*:(.*?)(?:</p>|</div>|<footer)", pagina, re.I | re.S)
     return _texto(m.group(1)) if m else ""
+
+
+def _filas_html(tabla):
+    cuerpo = re.search(r"<tbody[^>]*>(.*?)</tbody>", tabla, re.I | re.S)
+    if not cuerpo:
+        return []
+    filas = []
+    for fila in re.findall(r"<tr[^>]*>(.*?)</tr>", cuerpo.group(1), re.I | re.S):
+        celdas = [_texto(celda) for celda in re.findall(r"<td[^>]*>(.*?)</td>", fila, re.I | re.S)]
+        if celdas:
+            filas.append(celdas)
+    return filas
 
 
 def extraer_pagina(slug):
@@ -114,17 +154,23 @@ def extraer_pagina(slug):
     pagina = _get(url)
     nonce = re.search(r'name="wdtNonceFrontendEdit" value="([^"]*)', pagina)
     tablas = []
-    for m in re.finditer(r'<table[^>]*id="(table_\d+)"[^>]*data-wpdatatable_id="(\d+)"[^>]*>(.*?)</thead>', pagina, re.S):
+    for indice, m in enumerate(re.finditer(r'<table[^>]*id="(table_\d+)"[^>]*data-wpdatatable_id="(\d+)"[^>]*>(.*?)</table>', pagina, re.S)):
         tabla_id = m.group(2)
         encabezados = [_texto(x) for x in re.findall(r"<th[^>]*>(.*?)</th>", m.group(3), re.S)]
-        payload = urllib.parse.urlencode({
-            "draw": 1, "start": 0, "length": -1,
-            "wdtNonce": nonce.group(1) if nonce else "",
-        }).encode()
-        respuesta = json.loads(_get(f"{BASE}/wp-admin/admin-ajax.php?action=get_wdtable&table_id={tabla_id}", payload))
-        filas = respuesta.get("data")
-        if not isinstance(filas, list):
-            raise ErrorMinerpa(f"{slug}: la tabla {tabla_id} no devolvió una lista de filas")
+        filas = _filas_html(m.group(3))
+        minimos = CATALOGO.get(slug, (0, [], None))[1]
+        minimo = minimos[indice] if indice < len(minimos) else 1
+        if len(filas) < minimo:
+            payload = urllib.parse.urlencode({
+                "draw": 1, "start": 0, "length": -1,
+                "wdtNonce": nonce.group(1) if nonce else "",
+            }).encode()
+            respuesta = _get_json(
+                f"{BASE}/wp-admin/admin-ajax.php?action=get_wdtable&table_id={tabla_id}",
+                payload, f"{slug}, tabla {tabla_id}", url)
+            filas = respuesta.get("data")
+            if not isinstance(filas, list):
+                raise ErrorMinerpa(f"{slug}: la tabla {tabla_id} no devolvió una lista de filas")
         tablas.append({"id": tabla_id, "headers": encabezados, "rows": filas})
     titulo = re.search(r"<h2[^>]*>(.*?)</h2>", pagina, re.S)
     unidad = re.search(r"Las cantidades son expresadas en\s*(.*?)(?:</p>|</div>)", pagina, re.I | re.S)

@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "herramientas"))
 
 from actualizar_minerpa import aplanar, cargar_constantes, comparar, reemplazar_constante
-from minerpa_pipeline import ErrorMinerpa, transformar_b, transformar_dm, validar_crudo
+from minerpa_pipeline import ErrorMinerpa, _filas_html, transformar_b, transformar_dm, validar_crudo
 
 
 def tabla(headers, rows):
@@ -17,6 +17,11 @@ def tabla(headers, rows):
 
 
 class ActualizacionTests(unittest.TestCase):
+    def test_extrae_filas_incrustadas_en_html(self):
+        html = """<thead><tr><th>wdt_ID</th><th>Año</th></tr></thead>
+        <tbody><tr><td>1</td><td>2025</td></tr><tr><td>2</td><td>2026&nbsp;</td></tr></tbody>"""
+        self.assertEqual(_filas_html(html), [["1", "2025"], ["2", "2026"]])
+
     def test_reemplaza_una_constante_sin_tocar_las_otras(self):
         html = 'const D = {"x":[[2024,1]]};\nconst B = {"ok":true};\nconst DM = {"years":[2024]};\n'
         valores = cargar_constantes(html)
