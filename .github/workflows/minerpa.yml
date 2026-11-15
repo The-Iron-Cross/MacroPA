@@ -1,0 +1,152 @@
+name: Preparar actualización MINERPA
+
+# Nunca escribe en main. Si la extracción y todas las validaciones aprueban,
+# actualiza la rama automation/minerpa y abre un pull request para revisión.
+on:
+  schedule:
+    - cron: "15 14 * * *" # 9:15 a. m. en Panamá
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/minerpa.yml"
+      - "herramientas/**"
+      - "tests/**"
+      - "datos/minerpa/**"
+      - "index.html"
+  workflow_dispatch:
+    inputs:
+      crear_pr:
+        description: "Actualizar automation/minerpa y abrir PR si todo aprueba"
+        type: boolean
+        default: false
+      alertar:
+        description: "Crear issue si esta ejecución manual falla"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: datos-macropa
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'schedule' && 'main' || github.ref }}
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pruebas unitarias
+        run: python -m unittest discover -s tests -p "test_minerpa.py" -v
+
+      - name: Extraer, transformar y preparar candidato
+        if: github.event_name != 'pull_request'
+        run: |
+          python herramientas/actualizar_minerpa.py \
+            --index index.html --datos datos/minerpa \
+            --raw-out "$RUNNER_TEMP/minerpa_crudo.json" \
+            --informe "$RUNNER_TEMP/minerpa_informe.json" \
+            --resumen "$RUNNER_TEMP/minerpa_resumen.md"
+
+      - name: Validar la página completa contra la versión vigente
+        run: |
+          git show HEAD:index.html > "$RUNNER_TEMP/anterior.html"
+          node herramientas/validar_macropa.js "$RUNNER_TEMP/anterior.html" \
+            --informe "$RUNNER_TEMP/validacion_base.json" \
+            --resumen "$RUNNER_TEMP/validacion_base.md"
+          node herramientas/validar_macropa.js index.html --base "$RUNNER_TEMP/anterior.html" \
+            --borrados error --informe "$RUNNER_TEMP/validacion.json" \
+            --resumen "$RUNNER_TEMP/validacion.md"
+          python herramientas/bloquear_atipicos_nuevos.py \
+            "$RUNNER_TEMP/validacion_base.json" "$RUNNER_TEMP/validacion.json"
+
+      - name: Preparar pull request si hay cambios
+        if: github.event_name != 'pull_request'
+        id: cambios
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CREAR_PR: ${{ github.event_name == 'schedule' || inputs.crear_pr }}
+        run: |
+          git add index.html datos/minerpa
+          if git diff --cached --quiet; then
+            echo "Sin cambios de datos." >> "$GITHUB_STEP_SUMMARY"
+            echo "hay=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$CREAR_PR" != "true" ]; then
+            echo "Cambios validados en modo de prueba; no se actualizó ninguna rama remota." >> "$GITHUB_STEP_SUMMARY"
+            echo "hay=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          RAMA=automation/minerpa
+          git config user.name "MacroPA datos"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$RAMA"
+          git commit -m "MINERPA: candidato validado $(date -u +%F)"
+          git fetch origin "$RAMA:refs/remotes/origin/$RAMA" || true
+          git push --force-with-lease origin "HEAD:$RAMA"
+          if ! gh pr view "$RAMA" --json number >/dev/null 2>&1; then
+            gh pr create --base main --head "$RAMA" \
+              --title "MINERPA: actualización validada" \
+              --body-file "$RUNNER_TEMP/minerpa_resumen.md"
+          fi
+          echo "hay=true" >> "$GITHUB_OUTPUT"
+
+      - name: Resumen de la ejecución
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/minerpa_resumen.md" ]; then cat "$RUNNER_TEMP/minerpa_resumen.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f "$RUNNER_TEMP/validacion.md" ]; then cat "$RUNNER_TEMP/validacion.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ "${{ job.status }}" != "success" ]; then
+            echo "**No se cambió main ni se publicó nada. Se conserva la última versión válida.**" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Guardar evidencia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-minerpa-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/minerpa_crudo.json
+            ${{ runner.temp }}/minerpa_informe.json
+            ${{ runner.temp }}/minerpa_resumen.md
+            ${{ runner.temp }}/validacion_base.json
+            ${{ runner.temp }}/validacion.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+      - name: Abrir o actualizar aviso de fallo
+        if: failure() && (github.event_name == 'schedule' || inputs.alertar)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "MINERPA: actualización bloqueada";
+            const body = `La actualización automática fue bloqueada y no modificó **main** ni GitHub Pages.\n\nEjecución: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nRevise el resumen y el artefacto de auditoría.`;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state: "open", per_page: 100});
+            const found = issues.find(i => !i.pull_request && i.title === title);
+            if (found) await github.rest.issues.createComment({...context.repo, issue_number: found.number, body});
+            else await github.rest.issues.create({...context.repo, title, body, labels: ["data-quality"]}).catch(async () => {
+              await github.rest.issues.create({...context.repo, title, body});
+            });
+
+      - name: Cerrar aviso al recuperarse
+        if: success() && (github.event_name == 'schedule' || inputs.alertar)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "MINERPA: actualización bloqueada";
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state: "open", per_page: 100});
+            for (const issue of issues.filter(i => !i.pull_request && i.title === title)) {
+              await github.rest.issues.createComment({...context.repo, issue_number: issue.number, body: "La comprobación volvió a aprobar. Cierro el aviso automáticamente."});
+              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: "closed"});
+            }

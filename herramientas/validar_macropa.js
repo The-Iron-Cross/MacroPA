@@ -43,8 +43,9 @@ function cargar(ruta) {
     try { datos[n] = JSON.parse(txt); } catch (e) { faltan.push(n + " (no se puede leer: " + e.message + ")"); }
   }
   const ini = html.indexOf("function validarMacroPA(){");
-  const fin = ini < 0 ? -1 : html.indexOf("\n}\n", ini);
-  return { datos, faltan, funcion: ini < 0 || fin < 0 ? null : html.slice(ini, fin + 2) };
+  const cierre = ini < 0 ? null : /\r?\n}\r?\n/.exec(html.slice(ini));
+  const fin = cierre ? ini + cierre.index : -1;
+  return { datos, faltan, funcion: ini < 0 || fin < 0 ? null : html.slice(ini, fin + cierre[0].indexOf("}") + 1) };
 }
 
 const R = [];   // {nivel: error|atipico|aviso, donde, msg}

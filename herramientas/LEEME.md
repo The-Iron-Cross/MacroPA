@@ -6,6 +6,23 @@
 4. `python3 datos_mef.py mef mef.json` arma el resumen del presupuesto.
 5. `python3 armar_pagina.py plantilla.html panama.json mef.json "fecha" vista.html ../index.html` genera el sitio.
 
+## Actualización automática de MINERPA
+
+`actualizar_minerpa.py` reemplaza el flujo manual anterior para las series que aún
+dependen de MINERPA. Usa un catálogo cerrado de páginas, valida tablas y encabezados,
+transforma `D`, `B` y `DM`, y actualiza únicamente las 26 series autorizadas de `D`.
+`D.pib_growth`, `D.pib_nom`, `D.pib_pc` y `D.imae` están protegidas porque se
+complementan con publicaciones directas del INEC.
+
+El flujo `.github/workflows/minerpa.yml` corre diariamente. Nunca escribe en `main`:
+si hay cambios validados actualiza `automation/minerpa` y abre un pull request. Si
+falla la descarga, cambia el esquema o se perdería una cifra, conserva los últimos
+datos válidos, guarda evidencia por 90 días y abre un issue de aviso.
+
+Prueba local con una descarga guardada:
+
+`python3 actualizar_minerpa.py --index ../index.html --datos ../datos/minerpa --raw minerpa.json --informe informe.json --resumen resumen.md --dry-run`
+
 ## Deuda pública mensual (MEF, Dirección de Financiamiento Público)
 
 `python3 deuda_mef.py ../datos/deuda` baja los meses nuevos y vuelve a revisar los últimos 13 (agrega `--completo` para toda la historia desde dic-2015). Escribe en `datos/deuda/`:

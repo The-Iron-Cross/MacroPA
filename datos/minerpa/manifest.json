@@ -1,0 +1,240 @@
+{
+  "fuente_intermedia": "MINERPA, Banco Interamericano de Desarrollo",
+  "comprobado_utc": "2026-11-15T02:23:53+00:00",
+  "series": {
+    "D.acp": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/transferencias-de-la-autoridad-del-canal-al-estado/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "b9d9dcac0684b0a1a632132f3f475d6eb8140b21d3226c92a74a7e708431c218"
+    },
+    "D.cc": {
+      "fuente": "Instituto Nacional de Estadística y Censo.",
+      "url": "https://minerpa.com.pa/saldo-de-la-cuenta-corriente/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "d0fe3b8936c7893373ce4495cc3f528f1b9edfab847988d1ebbc44a0deb3fd22"
+    },
+    "D.com": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República.",
+      "url": "https://minerpa.com.pa/saldo-de-la-cuenta-comercial/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "102a9f1e775bb78bc1d0a4bee498cd59028d1de4a65836350ed4f67ecbbda838"
+    },
+    "D.demo": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República",
+      "url": "https://minerpa.com.pa/indicadores-demograficos/",
+      "periodo": "2024",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "ddbeb356a9125de5f41da6aa562c1ff284f1ceb8a3f313b5719a2694448f7df8"
+    },
+    "D.desempleo": {
+      "fuente": "Contraloría General de la República. Instituto Nacional de Estadística y Censo",
+      "url": "https://minerpa.com.pa/tasa-de-ocupacion/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "802173b7b8399456ef8b844614e9fba945d9c6c66d14612a2342a46f2b98759a"
+    },
+    "D.deuda": {
+      "fuente": "Ministerio de Economía y Finanzas",
+      "url": "https://minerpa.com.pa/deuda-del-sector-publico/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "7e7366df76c69f06a1c98ab7980b8f255f1199835287803147e93e3a53bf293b"
+    },
+    "D.deuda_comp": {
+      "fuente": "Ministerio de Economía y Finanzas",
+      "url": "https://minerpa.com.pa/composicion-de-la-deuda-publica/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "f36d50eb7f80f99dc77245733dbdc5931d5662597a5711e3b6395584ec0e6923"
+    },
+    "D.edad": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República",
+      "url": "https://minerpa.com.pa/indicadores-demograficos/",
+      "periodo": "2050",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "1f45f7c0d80d3f994ece8d9de02673d8571bd6f6bb18fe93ea7a149e858827d0"
+    },
+    "D.gc": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/balance-del-gobierno-central/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "e2707bfa75ee7f94af1c19321cb3fe94064641772fd169b06d26de3558907307"
+    },
+    "D.gini": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/coeficiente-de-gini/",
+      "periodo": "2023",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "7e8b9b7c3bccfc5de2744feb2d7154743f30b35b2c71a1ff8b021084586d05b1"
+    },
+    "D.ied": {
+      "fuente": "Instituto Nacional de Estadística y Censo.",
+      "url": "https://minerpa.com.pa/inversion-extranjera-directa/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "fc3552ba6bc8db9681e4c59059cf7a5c3e50acbe30753dfd8df1538c13e19b0e"
+    },
+    "D.ied_pct": {
+      "fuente": "Instituto Nacional de Estadística y Censo.",
+      "url": "https://minerpa.com.pa/inversion-extranjera-directa/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "498f36fc373f0404e1072c04fccedeb301b7f5d3f397d4f22209e1a1476ef810"
+    },
+    "D.impuestos": {
+      "fuente": "CIAT/BID, DGI, OCDE e INEC.",
+      "url": "https://minerpa.com.pa/ingresos-impositivos/",
+      "periodo": "2023",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "36e63a0885d750c17e7d583fdcb31a949db10bf2a99207b3f2e67fc1bf898cb1"
+    },
+    "D.inflacion": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República.",
+      "url": "https://minerpa.com.pa/tasa-de-inflacion-3/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "34ebe4ada5f744122e961c23e3b22e1dae233a035759037cc848894b3e51d795"
+    },
+    "D.informalidad": {
+      "fuente": "Contraloría General de la República. Instituto Nacional de Estadística y Censo",
+      "url": "https://minerpa.com.pa/tasa-de-informalidad/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "ea69a201181f8e7f966431d0dec36fa602c45628b6c9a07b0cbc8828722d75bb"
+    },
+    "D.ing_prov": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/ingreso-mensual-promedio-de-los-hogares-por-provincias/",
+      "periodo": "2023",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "5de07ad98d68eacfa74940a881507ba4ca4b188a737210434e4cd0cd2e3c13a0"
+    },
+    "D.participacion": {
+      "fuente": "Contraloría General de la República. Instituto Nacional de Estadística y Censo",
+      "url": "https://minerpa.com.pa/tasa-de-participacion/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "7d7f77212ed0a8d71e79c55233270f15bf3425a794583dbb8b4606422fa2b198"
+    },
+    "D.pob_prov": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/pobreza-general-por-provincias/",
+      "periodo": "2023",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "759d37612dff59612586b377ecd242ad3f09036ebf851924a43c4e41b1893ad4"
+    },
+    "D.poblacion": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República",
+      "url": "https://minerpa.com.pa/serie-historica-de-poblacion-censo-2023/",
+      "periodo": "2050",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "28d6170f529a12b439e6f59003d2ac1752d597c59cd7e4cfaa83ea7c48d6b701"
+    },
+    "D.pobm_prov": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/pobreza-multidimensional-por-provincias/",
+      "periodo": "2022",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "38a1dc880b9025bb5de1689ef6a1c467408b322a2cc474d736bab67342303984"
+    },
+    "D.pobreza": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/pobreza-general-y-pobreza-extrema/",
+      "periodo": "2023",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "d4aaf3031b696612b7549cbc98a489fae44bdd47f1907ddc6c5d612ed6eec961"
+    },
+    "D.pobx_prov": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/pobreza-extrema-por-provincias/",
+      "periodo": "2023",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "98038abb380269c0e2549bd08f3c4e7867ea68e3a281ac5131d57c74578a3123"
+    },
+    "D.salario": {
+      "fuente": "Contraloría General de la República. Instituto Nacional de Estadística y Censo",
+      "url": "https://minerpa.com.pa/mediana-salarial-por-actividad-economica/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "efa8309643551fd639287e812919c10504b52fc1d72310a6d0495ea8faabdf72"
+    },
+    "D.sectores": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República.",
+      "url": "https://minerpa.com.pa/producto-interno-bruto-real-segun-enfoque-de-oferta-base-2018/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "e134b501ae766f55c94d5abacf46fa0fb675493b7f2075d797584f875c192371"
+    },
+    "D.spnf": {
+      "fuente": "Ministerio de Economía y Finanzas.",
+      "url": "https://minerpa.com.pa/balance-del-sector-publico-no-financiero/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "c497e40512f90713daf47882404659ecedfb7cb4dfa9ecf87a92cd5fb82c2033"
+    },
+    "D.xserv": {
+      "fuente": "Instituto Nacional de Estadística y Censo, Contraloría General de la República.",
+      "url": "https://minerpa.com.pa/exportaciones-de-bienes-y-servicios/",
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "7bea483aeb6dfc6e572f1164d9605a7a53e5dce19cffeb022d101495795b57e0"
+    },
+    "B": {
+      "fuente": "Superintendencia de Bancos de Panamá e INEC",
+      "urls": [
+        "https://minerpa.com.pa/saldo-de-la-cartera-de-credito-segun-destino/",
+        "https://minerpa.com.pa/saldo-de-la-cartera-de-credito-segun-sector-economico/",
+        "https://minerpa.com.pa/saldo-de-los-depositos/",
+        "https://minerpa.com.pa/tasa-de-interes-sobre-credito/",
+        "https://minerpa.com.pa/tasa-de-interes-sobre-depositos/",
+        "https://minerpa.com.pa/tasa-de-inflacion-por-grupos/"
+      ],
+      "periodo": "2025",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "947c1ed5064ba2078ea2b0a4b864128829c8f2df6dfa7f3ed3476105593f8dda"
+    },
+    "DM": {
+      "fuente": "INEC, Contraloría General",
+      "urls": [
+        "https://minerpa.com.pa/producto-interno-bruto-real-segun-enfoque-de-demanda-base-2018/",
+        "https://minerpa.com.pa/producto-interno-bruto-nominal-segun-enfoque-de-demanda-base-2018/"
+      ],
+      "periodo": "2024",
+      "comprobado_utc": "2026-11-15T02:23:53+00:00",
+      "actualizado_utc": "2026-11-15T02:23:53+00:00",
+      "sha256": "92a66181e263b1d2e298e1e204ae05552283fb1f64384ef11398b4e9b738407c"
+    }
+  }
+}
