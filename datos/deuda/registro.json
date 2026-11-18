@@ -472,10 +472,24 @@
    "nuevos": [],
    "revisados": [],
    "errores": []
+  },
+  {
+   "fecha": "2026-11-18T14:13:36+00:00",
+   "modo": "incremental",
+   "pedidos": {
+    "saldos": 13,
+    "cpp": 13
+   },
+   "nuevos": [
+    "2026-10",
+    "cpp 2026-10"
+   ],
+   "revisados": [],
+   "errores": []
   }
  ],
  "ultimo_periodo": {
-  "saldos": "2026-09",
-  "cpp": "2026-09"
+  "saldos": "2026-10",
+  "cpp": "2026-10"
  }
 }

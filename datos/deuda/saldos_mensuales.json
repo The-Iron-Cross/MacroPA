@@ -95085,6 +95085,761 @@
    ],
    "estado": "validado",
    "primera_deteccion": "2026-11-06"
+  },
+  "2026-10": {
+   "periodo": "2026-10",
+   "fecha_corte": "2026-10-31",
+   "externa": {
+    "nombre": "Deuda Externa",
+    "saldo_inicial": 52644.404761,
+    "desembolsos": 161.787919,
+    "amortizacion": 45.554337,
+    "intereses": 145.724139,
+    "prima": 0.0,
+    "comisiones": 0.533571,
+    "pagos_total": 191.812047,
+    "variacion_cambiaria": -19.249791,
+    "ajustes_descuentos": 0.0,
+    "saldo_final": 52741.388551,
+    "fecha_inicial": "2026-09-30",
+    "fecha_corte": "2026-10-31",
+    "componentes": [
+     {
+      "nombre": "MULTILATERALES",
+      "saldo_inicial": 9616.584471,
+      "desembolsos": 46.973318,
+      "amortizacion": 39.132831,
+      "intereses": 27.106557,
+      "prima": 0.0,
+      "comisiones": 0.533571,
+      "pagos_total": 66.772959,
+      "variacion_cambiaria": -0.055255,
+      "ajustes_descuentos": 0.0,
+      "saldo_final": 9624.369702,
+      "fuentes": [
+       {
+        "nombre": "BID",
+        "saldo_inicial": 4148.910135,
+        "desembolsos": 19.473318,
+        "amortizacion": 15.392948,
+        "intereses": 17.255832,
+        "prima": 0.0,
+        "comisiones": 0.486322,
+        "pagos_total": 33.135101,
+        "variacion_cambiaria": -0.055255,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 4152.935249
+       },
+       {
+        "nombre": "BIRF",
+        "saldo_inicial": 2261.448932,
+        "desembolsos": 0.0,
+        "amortizacion": 4.090922,
+        "intereses": 4.368822,
+        "prima": 0.0,
+        "comisiones": 0.047249,
+        "pagos_total": 8.506993,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2257.35801
+       },
+       {
+        "nombre": "CAF",
+        "saldo_inicial": 2287.509565,
+        "desembolsos": 23.5,
+        "amortizacion": 19.47109,
+        "intereses": 5.437782,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 24.908872,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2291.538475
+       },
+       {
+        "nombre": "BEI",
+        "saldo_inicial": 46.336047,
+        "desembolsos": 4.0,
+        "amortizacion": 0.177871,
+        "intereses": 0.044121,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.221992,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 50.158176
+       },
+       {
+        "nombre": "OPEP OFID",
+        "saldo_inicial": 127.37272,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 127.37272
+       },
+       {
+        "nombre": "BCIE",
+        "saldo_inicial": 745.007072,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 745.007072
+       }
+      ]
+     },
+     {
+      "nombre": "BANCOS (DIRECTOS)",
+      "saldo_inicial": 11166.04148,
+      "desembolsos": 0.0,
+      "amortizacion": 0.0,
+      "intereses": 33.825575,
+      "prima": 0.0,
+      "comisiones": 0.0,
+      "pagos_total": 33.825575,
+      "variacion_cambiaria": 4.76329,
+      "ajustes_descuentos": 0.0,
+      "saldo_final": 11170.80477,
+      "fuentes": [
+       {
+        "nombre": "PTMOS. DIR. BCOS.",
+        "saldo_inicial": 11166.04148,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 33.825575,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 33.825575,
+        "variacion_cambiaria": 4.76329,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 11170.80477
+       }
+      ]
+     },
+     {
+      "nombre": "BILATERALES",
+      "saldo_inicial": 765.07581,
+      "desembolsos": 114.814601,
+      "amortizacion": 6.421506,
+      "intereses": 0.34209,
+      "prima": 0.0,
+      "comisiones": 0.0,
+      "pagos_total": 6.763595,
+      "variacion_cambiaria": -23.957826,
+      "ajustes_descuentos": 0.0,
+      "saldo_final": 849.511079,
+      "fuentes": [
+       {
+        "nombre": "BOS. C/GAR. OFIC.",
+        "saldo_inicial": 5.106378,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 5.106378
+       },
+       {
+        "nombre": "PTMOS. DIR. GOBNOS.",
+        "saldo_inicial": 759.969432,
+        "desembolsos": 114.814601,
+        "amortizacion": 6.421506,
+        "intereses": 0.34209,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 6.763595,
+        "variacion_cambiaria": -23.957826,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 844.404701
+       }
+      ]
+     },
+     {
+      "nombre": "BONOS",
+      "saldo_inicial": 31096.703,
+      "desembolsos": 0.0,
+      "amortizacion": 0.0,
+      "intereses": 84.449918,
+      "prima": 0.0,
+      "comisiones": 0.0,
+      "pagos_total": 84.449918,
+      "variacion_cambiaria": 0.0,
+      "ajustes_descuentos": 0.0,
+      "saldo_final": 31096.703,
+      "fuentes": [
+       {
+        "nombre": "GLOBAL 34",
+        "saldo_inicial": 1574.479,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 3.431959,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 3.431959,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1574.479
+       },
+       {
+        "nombre": "GLOBAL 36",
+        "saldo_inicial": 3033.893,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 3033.893
+       },
+       {
+        "nombre": "GLOBAL 53",
+        "saldo_inicial": 1446.139,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 31.091988,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 31.091988,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1446.139
+       },
+       {
+        "nombre": "GLOBAL 27",
+        "saldo_inicial": 975.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 975.0
+       },
+       {
+        "nombre": "GLOBAL 29",
+        "saldo_inicial": 407.335,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 407.335
+       },
+       {
+        "nombre": "GLOBAL 28",
+        "saldo_inicial": 1749.988,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1749.988
+       },
+       {
+        "nombre": "GLOBAL 47",
+        "saldo_inicial": 1124.983,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1124.983
+       },
+       {
+        "nombre": "GLOBAL 50",
+        "saldo_inicial": 2218.932,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 49.92597,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 49.92597,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2218.932
+       },
+       {
+        "nombre": "GLOBALES 30",
+        "saldo_inicial": 1550.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1550.0
+       },
+       {
+        "nombre": "GLOBALES 60",
+        "saldo_inicial": 2337.026,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2337.026
+       },
+       {
+        "nombre": "GLOBAL 56",
+        "saldo_inicial": 1972.59,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1972.59
+       },
+       {
+        "nombre": "GLOBAL 32",
+        "saldo_inicial": 2500.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2500.0
+       },
+       {
+        "nombre": "GLOBAL 2033",
+        "saldo_inicial": 1000.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1000.0
+       },
+       {
+        "nombre": "GLOBAL 2063",
+        "saldo_inicial": 1500.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1500.0
+       },
+       {
+        "nombre": "GLOBAL 2035",
+        "saldo_inicial": 2500.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2500.0
+       },
+       {
+        "nombre": "GLOBAL 54",
+        "saldo_inicial": 1400.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1400.0
+       },
+       {
+        "nombre": "GLOBAL 31",
+        "saldo_inicial": 389.135,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 389.135
+       },
+       {
+        "nombre": "GLOBAL 38",
+        "saldo_inicial": 2667.203,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2667.203
+       },
+       {
+        "nombre": "GLOBAL 57",
+        "saldo_inicial": 750.0,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 750.0
+       }
+      ]
+     }
+    ]
+   },
+   "interna": {
+    "nombre": "Deuda Interna",
+    "saldo_inicial": 10133.255403,
+    "desembolsos": 229.814632,
+    "amortizacion": 358.889,
+    "intereses": 23.78287,
+    "prima": 0.0,
+    "comisiones": 0.137082,
+    "pagos_total": 382.808952,
+    "variacion_cambiaria": 0.0,
+    "ajustes_descuentos": 12.855368,
+    "saldo_final": 10017.036403,
+    "fecha_inicial": "2026-09-30",
+    "fecha_corte": "2026-10-31",
+    "componentes": [
+     {
+      "nombre": "FUENTE DEL SECTOR PRIVADO",
+      "saldo_inicial": 9130.353407,
+      "desembolsos": 229.814632,
+      "amortizacion": 358.889,
+      "intereses": 21.933555,
+      "prima": 0.0,
+      "comisiones": 0.137082,
+      "pagos_total": 380.959637,
+      "variacion_cambiaria": 0.0,
+      "ajustes_descuentos": 12.855368,
+      "saldo_final": 9014.134407,
+      "fuentes": [
+       {
+        "nombre": "PRIVADOS",
+        "saldo_inicial": 0.914407,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 0.914407
+       },
+       {
+        "nombre": "BONOS INTERNOS",
+        "saldo_inicial": 3864.163,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 0.0,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 3864.163
+       },
+       {
+        "nombre": "LETRAS DEL TESORO",
+        "saldo_inicial": 2597.802,
+        "desembolsos": 229.814632,
+        "amortizacion": 358.889,
+        "intereses": 0.0,
+        "prima": 0.0,
+        "comisiones": 0.137082,
+        "pagos_total": 359.026082,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 12.855368,
+        "saldo_final": 2481.583
+       },
+       {
+        "nombre": "NOTAS DEL TESORO",
+        "saldo_inicial": 2667.474,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 21.933555,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 21.933555,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 2667.474
+       }
+      ]
+     },
+     {
+      "nombre": "FUENTE DEL SECTOR PÚBLICO",
+      "saldo_inicial": 1002.901995,
+      "desembolsos": 0.0,
+      "amortizacion": 0.0,
+      "intereses": 1.849315,
+      "prima": 0.0,
+      "comisiones": 0.0,
+      "pagos_total": 1.849315,
+      "variacion_cambiaria": 0.0,
+      "ajustes_descuentos": 0.0,
+      "saldo_final": 1002.901995,
+      "fuentes": [
+       {
+        "nombre": "BANCOS OFICIALES",
+        "saldo_inicial": 1002.901995,
+        "desembolsos": 0.0,
+        "amortizacion": 0.0,
+        "intereses": 1.849315,
+        "prima": 0.0,
+        "comisiones": 0.0,
+        "pagos_total": 1.849315,
+        "variacion_cambiaria": 0.0,
+        "ajustes_descuentos": 0.0,
+        "saldo_final": 1002.901995
+       }
+      ]
+     }
+    ]
+   },
+   "url": {
+    "externa": "https://fpweb.mef.gob.pa/Views/Reporte/ReportViewer.aspx?reporte=Rpt_SaldoDeudaPublica&TIPO_DEUDA=E&ANIOS=2026&MES=10&IDIOMAS=E",
+    "interna": "https://fpweb.mef.gob.pa/Views/Reporte/ReportViewer.aspx?reporte=Rpt_SaldoDeudaPublica&TIPO_DEUDA=I&ANIOS=2026&MES=10&IDIOMAS=E"
+   },
+   "total": {
+    "saldo_final": 62758.424954,
+    "metodo": "externa + interna del mismo reporte"
+   },
+   "participacion_pct_externa": 84.0387,
+   "participacion_pct_interna": 15.9613,
+   "validaciones": [
+    {
+     "prueba": "externa: saldo_inicial = suma por tipo de crédito",
+     "esperado": 52644.404761,
+     "obtenido": 52644.404761,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: saldo_final = suma por tipo de crédito",
+     "esperado": 52741.388551,
+     "obtenido": 52741.388551,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: desembolsos = suma por tipo de crédito",
+     "esperado": 161.787919,
+     "obtenido": 161.787919,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: amortizacion = suma por tipo de crédito",
+     "esperado": 45.554337,
+     "obtenido": 45.554337,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: intereses = suma por tipo de crédito",
+     "esperado": 145.724139,
+     "obtenido": 145.72414,
+     "diferencia": 1e-06,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: MULTILATERALES saldo = suma por fuente",
+     "esperado": 9624.369702,
+     "obtenido": 9624.369702,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: BANCOS (DIRECTOS) saldo = suma por fuente",
+     "esperado": 11170.80477,
+     "obtenido": 11170.80477,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: BILATERALES saldo = suma por fuente",
+     "esperado": 849.511079,
+     "obtenido": 849.511079,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: BONOS saldo = suma por fuente",
+     "esperado": 31096.703,
+     "obtenido": 31096.703,
+     "diferencia": -0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "externa: pagos = amortización + intereses + prima + comisiones",
+     "esperado": 191.812047,
+     "obtenido": 191.812047,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "externa: saldo final = inicial + desembolsos − amortización + variación cambiaria + ajustes",
+     "esperado": 52741.388551,
+     "obtenido": 52741.388552,
+     "diferencia": 1e-06,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "externa: saldo inicial = saldo final del mes anterior",
+     "esperado": 52644.404761,
+     "obtenido": 52644.404761,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "interna: saldo_inicial = suma por tipo de crédito",
+     "esperado": 10133.255403,
+     "obtenido": 10133.255402,
+     "diferencia": -1e-06,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: saldo_final = suma por tipo de crédito",
+     "esperado": 10017.036403,
+     "obtenido": 10017.036402,
+     "diferencia": -1e-06,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: desembolsos = suma por tipo de crédito",
+     "esperado": 229.814632,
+     "obtenido": 229.814632,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: amortizacion = suma por tipo de crédito",
+     "esperado": 358.889,
+     "obtenido": 358.889,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: intereses = suma por tipo de crédito",
+     "esperado": 23.78287,
+     "obtenido": 23.78287,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: FUENTE DEL SECTOR PRIVADO saldo = suma por fuente",
+     "esperado": 9014.134407,
+     "obtenido": 9014.134407,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: FUENTE DEL SECTOR PÚBLICO saldo = suma por fuente",
+     "esperado": 1002.901995,
+     "obtenido": 1002.901995,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "interna: pagos = amortización + intereses + prima + comisiones",
+     "esperado": 382.808952,
+     "obtenido": 382.808952,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "interna: saldo final = inicial + desembolsos − amortización + variación cambiaria + ajustes",
+     "esperado": 10017.036403,
+     "obtenido": 10017.036403,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "interna: saldo inicial = saldo final del mes anterior",
+     "esperado": 10133.255403,
+     "obtenido": 10133.255403,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "participación externa + interna = 100%",
+     "esperado": 100.0,
+     "obtenido": 100.0,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    }
+   ],
+   "estado": "validado",
+   "primera_deteccion": "2026-11-18"
   }
  },
  "fuente": "Ministerio de Economía y Finanzas, Dirección de Financiamiento Público",
@@ -95092,7 +95847,7 @@
  "unidad": "millones de USD",
  "universo": "Deuda pública total registrada por la DFP-MEF: Gobierno Central más instituciones descentralizadas con deuda registrada (el reporte 'Estado de la Deuda Pública Total por Sector Público' la separa). No es la deuda del SPNF ni del Sector Público consolidado.",
  "fecha_publicacion": "El MEF no publica la fecha de publicación de cada mes; 'primera_deteccion' es el día en que este proceso lo vio por primera vez.",
- "actualizado": "2026-11-06",
+ "actualizado": "2026-11-18",
  "reporte": {
   "id": 4,
   "nombre": "Rpt_SaldoDeudaPublica",

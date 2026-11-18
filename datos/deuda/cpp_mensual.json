@@ -32849,6 +32849,287 @@
    ],
    "estado": "validado",
    "primera_deteccion": "2026-11-06"
+  },
+  "2026-10": {
+   "fecha_corte": "2026-10-31",
+   "saldo_total": 62758.424951,
+   "cpp_total": 4.66763987055018,
+   "categorias": [
+    {
+     "nombre": "Tasa menor al 3.00%",
+     "saldo": 900.583662,
+     "cpp": 0.449766783926622,
+     "detalle": [
+      {
+       "nombre": "Financiamiento Privado",
+       "saldo": 0.914407,
+       "cpp": 0.0
+      },
+      {
+       "nombre": "Bilaterales",
+       "saldo": 849.511079,
+       "cpp": 0.29979999999999996
+      },
+      {
+       "nombre": "BEI",
+       "saldo": 50.158176,
+       "cpp": 2.9979
+      }
+     ]
+    },
+    {
+     "nombre": "Tasa de Interés de 3.00% a 6.00%",
+     "saldo": 61112.834218,
+     "cpp": 4.71362105435349,
+     "detalle": [
+      {
+       "nombre": "Banca Comercial",
+       "saldo": 11170.80477,
+       "cpp": 3.2253999999999996
+      },
+      {
+       "nombre": "Bancos Oficiales",
+       "saldo": 1002.901995,
+       "cpp": 3.6892
+      },
+      {
+       "nombre": "Bonos del Tesoro",
+       "saldo": 3864.163,
+       "cpp": 4.2076
+      },
+      {
+       "nombre": "BID",
+       "saldo": 4152.935249,
+       "cpp": 4.5333
+      },
+      {
+       "nombre": "Letras del Tesoro",
+       "saldo": 2481.583,
+       "cpp": 4.8621
+      },
+      {
+       "nombre": "BIRF",
+       "saldo": 2257.35801,
+       "cpp": 4.9413
+      },
+      {
+       "nombre": "OFID",
+       "saldo": 127.37272,
+       "cpp": 5.1126
+      },
+      {
+       "nombre": "Bonos Globales",
+       "saldo": 31096.703,
+       "cpp": 5.1537
+      },
+      {
+       "nombre": "Notas del Tesoro",
+       "saldo": 2667.474,
+       "cpp": 5.8286999999999995
+      },
+      {
+       "nombre": "CAF",
+       "saldo": 2291.538474,
+       "cpp": 5.9196
+      }
+     ]
+    },
+    {
+     "nombre": "Tasa de Interés mayor a 6.00%",
+     "saldo": 745.007071,
+     "cpp": 6.0634,
+     "detalle": [
+      {
+       "nombre": "BCIE",
+       "saldo": 745.007071,
+       "cpp": 6.0634
+      }
+     ]
+    },
+    {
+     "nombre": "Costo Promedio Ponderado por Tipo de Deuda",
+     "saldo": 62758.424953,
+     "cpp": 4.668522811165389,
+     "detalle": [
+      {
+       "nombre": "Deuda Externa",
+       "saldo": 52741.388551,
+       "cpp": 4.6532
+      },
+      {
+       "nombre": "Deuda Interna",
+       "saldo": 10017.036402,
+       "cpp": 4.7492
+      }
+     ]
+    },
+    {
+     "nombre": "Costo Promedio Ponderado por Cartera",
+     "saldo": 62758.424953,
+     "cpp": 4.66846155133766,
+     "detalle": [
+      {
+       "nombre": "Financiamiento Privado",
+       "saldo": 0.914407,
+       "cpp": 0.0
+      },
+      {
+       "nombre": "Bilaterales",
+       "saldo": 849.511079,
+       "cpp": 0.29979999999999996
+      },
+      {
+       "nombre": "Banca Comercial",
+       "saldo": 11170.80477,
+       "cpp": 3.2253999999999996
+      },
+      {
+       "nombre": "Bancos Oficiales",
+       "saldo": 1002.901995,
+       "cpp": 3.6892
+      },
+      {
+       "nombre": "Bonos del Tesoro",
+       "saldo": 3864.163,
+       "cpp": 4.2076
+      },
+      {
+       "nombre": "Letras del Tesoro",
+       "saldo": 2481.583,
+       "cpp": 4.8621
+      },
+      {
+       "nombre": "Multilaterales",
+       "saldo": 9624.369702,
+       "cpp": 5.0771999999999995
+      },
+      {
+       "nombre": "Bonos Globales",
+       "saldo": 31096.703,
+       "cpp": 5.1537
+      },
+      {
+       "nombre": "Notas del Tesoro",
+       "saldo": 2667.474,
+       "cpp": 5.8286999999999995
+      }
+     ]
+    }
+   ],
+   "periodo": "2026-10",
+   "url": "https://fpweb.mef.gob.pa/Views/Reporte/ReportViewer.aspx?reporte=Rpt_CostoPromedioPonderadoMensual&ANIOS=2026&MES=10&IDIOMAS=E",
+   "validaciones": [
+    {
+     "prueba": "CPP Tasa menor al 3.00%: saldo = suma del detalle",
+     "esperado": 900.583662,
+     "obtenido": 900.583662,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "CPP Tasa menor al 3.00%: promedio = ponderado del detalle",
+     "esperado": 0.449767,
+     "obtenido": 0.449767,
+     "diferencia": -0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "CPP Tasa de Interés de 3.00% a 6.00%: saldo = suma del detalle",
+     "esperado": 61112.834218,
+     "obtenido": 61112.834218,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "CPP Tasa de Interés de 3.00% a 6.00%: promedio = ponderado del detalle",
+     "esperado": 4.713621,
+     "obtenido": 4.713621,
+     "diferencia": -0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "CPP Tasa de Interés mayor a 6.00%: saldo = suma del detalle",
+     "esperado": 745.007071,
+     "obtenido": 745.007071,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "CPP Tasa de Interés mayor a 6.00%: promedio = ponderado del detalle",
+     "esperado": 6.0634,
+     "obtenido": 6.0634,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "CPP Costo Promedio Ponderado por Tipo de Deuda: saldo = suma del detalle",
+     "esperado": 62758.424953,
+     "obtenido": 62758.424953,
+     "diferencia": -0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "CPP Costo Promedio Ponderado por Tipo de Deuda: promedio = ponderado del detalle",
+     "esperado": 4.668523,
+     "obtenido": 4.668523,
+     "diferencia": -0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "CPP Costo Promedio Ponderado por Cartera: saldo = suma del detalle",
+     "esperado": 62758.424953,
+     "obtenido": 62758.424953,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": true
+    },
+    {
+     "prueba": "CPP Costo Promedio Ponderado por Cartera: promedio = ponderado del detalle",
+     "esperado": 4.668462,
+     "obtenido": 4.668462,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "CPP total entre el CPP externo y el interno",
+     "esperado": [
+      4.6532,
+      4.7492
+     ],
+     "obtenido": 4.66763987055018,
+     "diferencia": null,
+     "ok": true,
+     "obligatoria": false,
+     "clave": "cpp_total_en_rango"
+    },
+    {
+     "prueba": "CPP: saldo total = suma de rangos de tasa",
+     "esperado": 62758.424951,
+     "obtenido": 62758.424951,
+     "diferencia": 0.0,
+     "ok": true,
+     "obligatoria": false
+    },
+    {
+     "prueba": "CPP: saldo total = deuda externa + interna del reporte de saldos",
+     "esperado": 62758.424954,
+     "obtenido": 62758.424951,
+     "diferencia": -3e-06,
+     "ok": true,
+     "obligatoria": false
+    }
+   ],
+   "estado": "validado",
+   "primera_deteccion": "2026-11-18"
   }
  },
  "fuente": "Ministerio de Economía y Finanzas, Dirección de Financiamiento Público",
@@ -32856,7 +33137,7 @@
  "unidad": "millones de USD",
  "universo": "Deuda pública total registrada por la DFP-MEF: Gobierno Central más instituciones descentralizadas con deuda registrada (el reporte 'Estado de la Deuda Pública Total por Sector Público' la separa). No es la deuda del SPNF ni del Sector Público consolidado.",
  "fecha_publicacion": "El MEF no publica la fecha de publicación de cada mes; 'primera_deteccion' es el día en que este proceso lo vio por primera vez.",
- "actualizado": "2026-11-06",
+ "actualizado": "2026-11-18",
  "reporte": {
   "id": 44,
   "nombre": "Rpt_CostoPromedioPonderadoMensual",

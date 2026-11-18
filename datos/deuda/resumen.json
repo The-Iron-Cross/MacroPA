@@ -3,7 +3,7 @@
  "sitio": "https://fpublico.mef.gob.pa/es/Paginas/base-datos.aspx",
  "unidad": "millones de USD; CPP en % anual",
  "universo": "Deuda pública total registrada por la DFP-MEF: Gobierno Central más instituciones descentralizadas con deuda registrada (el reporte 'Estado de la Deuda Pública Total por Sector Público' la separa). No es la deuda del SPNF ni del Sector Público consolidado.",
- "actualizado": "2026-11-06",
+ "actualizado": "2026-11-18",
  "columnas": [
   "periodo",
   "total",
@@ -1706,6 +1706,19 @@
    4.673,
    4.66,
    4.741,
+   "vv"
+  ],
+  [
+   "2026-10",
+   62758.42,
+   52741.39,
+   10017.04,
+   391.6,
+   404.44,
+   169.51,
+   4.668,
+   4.653,
+   4.749,
    "vv"
   ]
  ],
